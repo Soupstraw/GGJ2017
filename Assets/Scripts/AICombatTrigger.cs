@@ -45,7 +45,9 @@ public class AICombatTrigger : MonoBehaviour {
             t_Player.rotation = Quaternion.Slerp(currentPlayerRot, t_PlayerLocation.rotation, i);
             yield return null;
         }
-
+			
 		// INITIATE FAYT SEQUENS
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
     }
 }
