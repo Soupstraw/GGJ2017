@@ -202,6 +202,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4408266600077308, guid: 49fe378f7fffa894490d6fda6809794d,
     type: 2}
   m_PrefabInternal: {fileID: 1209445584}
+--- !u!114 &540130519 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114742578595032472, guid: bb25b0501e87fdd45ba2ad7d9bfca90f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1331220329}
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &588245962 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 046be43bbd985f1468846392e927487d, type: 3}
@@ -326,6 +332,12 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300008, guid: 046be43bbd985f1468846392e927487d, type: 3}
+--- !u!114 &958643921 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114322519541995890, guid: bb25b0501e87fdd45ba2ad7d9bfca90f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1331220329}
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1120306124
 Prefab:
   m_ObjectHideFlags: 0
@@ -610,6 +622,18 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 649477560}
   m_Script: {fileID: 11500000, guid: 146addecd77456f498109c825a20f8f5, type: 3}
+--- !u!114 &1420965524 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114327472320039622, guid: bb25b0501e87fdd45ba2ad7d9bfca90f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1331220329}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &1473654730 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114598877560636674, guid: bb25b0501e87fdd45ba2ad7d9bfca90f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1331220329}
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1500154097
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +661,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 720cebc401b1bad48a5af3c15e6f5322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatCanvas: {fileID: 1973858406467218, guid: bb25b0501e87fdd45ba2ad7d9bfca90f,
+    type: 2}
+  buttonA: {fileID: 1473654730}
+  buttonB: {fileID: 958643921}
+  buttonC: {fileID: 1502102750}
+  buttonD: {fileID: 540130519}
+  questionText: {fileID: 1420965524}
 --- !u!4 &1500154099
 Transform:
   m_ObjectHideFlags: 0
@@ -650,6 +681,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1502102750 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114826192737002934, guid: bb25b0501e87fdd45ba2ad7d9bfca90f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1331220329}
+  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &1625229734 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100012, guid: 046be43bbd985f1468846392e927487d, type: 3}
