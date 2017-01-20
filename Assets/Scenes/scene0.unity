@@ -445,6 +445,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114427462178821924, guid: bb25b0501e87fdd45ba2ad7d9bfca90f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224454771060012734, guid: bb25b0501e87fdd45ba2ad7d9bfca90f,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -555,6 +560,31 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1500154098}
+    - target: {fileID: 114427462178821924, guid: bb25b0501e87fdd45ba2ad7d9bfca90f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114427462178821924, guid: bb25b0501e87fdd45ba2ad7d9bfca90f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114427462178821924, guid: bb25b0501e87fdd45ba2ad7d9bfca90f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1403604290}
+    - target: {fileID: 114427462178821924, guid: bb25b0501e87fdd45ba2ad7d9bfca90f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FleeCombat
+      objectReference: {fileID: 0}
+    - target: {fileID: 114427462178821924, guid: bb25b0501e87fdd45ba2ad7d9bfca90f,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bb25b0501e87fdd45ba2ad7d9bfca90f, type: 2}
   m_IsPrefabParent: 0
@@ -621,6 +651,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 49.708004, y: -98.663, z: 1.478}
+--- !u!114 &1403604290 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114812205963090200, guid: 15ac7086953d1a9489d7912acf610aa3,
+    type: 2}
+  m_PrefabInternal: {fileID: 649477560}
+  m_Script: {fileID: 11500000, guid: 146addecd77456f498109c825a20f8f5, type: 3}
 --- !u!1 &1500154097
 GameObject:
   m_ObjectHideFlags: 0
