@@ -60,6 +60,8 @@ public class AICombatTrigger : MonoBehaviour {
 		Cursor.visible = true;
 		combatCanvas.SetActive (true);
 
+		t_Player.GetComponentInChildren<MovementController> ().ResetAnimation ();
+
 		FindObjectOfType<QuizScript> ().CombatStart ();
     }
 }

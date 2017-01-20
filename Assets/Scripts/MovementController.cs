@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class MovementController : MonoBehaviour {
     public Vector2 v2_MoveSpeeds;
@@ -13,6 +14,9 @@ public class MovementController : MonoBehaviour {
 
 	public Animator characterAnimator;
 
+	public float jumpDelay;
+	private bool doJump = false;
+
     void Awake()
     {
         cc_This = GetComponent<CharacterController>();
@@ -21,25 +25,33 @@ public class MovementController : MonoBehaviour {
 
     void Update()
     {
-        if (cc_This.isGrounded)
-        {
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical   = Input.GetAxis("Vertical");
-            v3_MoveDir = new Vector3(horizontal, 0, vertical);
-			v3_MoveDir.Normalize ();
-			v3_MoveDir = Vector3.Scale (v3_MoveDir, new Vector3(v2_MoveSpeeds.x, 0, v2_MoveSpeeds.y));
+		characterAnimator.SetBool ("IsGrounded", cc_This.isGrounded);
 
-            t_CameraReference = t_Camera;
-            t_CameraReference.eulerAngles = new Vector3(0, t_Camera.eulerAngles.y, 0);
+		if (cc_This.isGrounded) {
+			float horizontal = Input.GetAxis ("Horizontal");
+			float vertical = Input.GetAxis ("Vertical");
+			v3_MoveDir = new Vector3 (horizontal, 0, vertical);
+			v3_MoveDir.Normalize ();
+			v3_MoveDir = Vector3.Scale (v3_MoveDir, new Vector3 (v2_MoveSpeeds.x, 0, v2_MoveSpeeds.y));
+
+			t_CameraReference = t_Camera;
+			t_CameraReference.eulerAngles = new Vector3 (0, t_Camera.eulerAngles.y, 0);
 
 			characterAnimator.SetFloat ("XWalking", v3_MoveDir.x);
 			characterAnimator.SetFloat ("YWalking", v3_MoveDir.z);
 
-            v3_MoveDir = t_CameraReference.TransformDirection(v3_MoveDir);
+			v3_MoveDir = t_CameraReference.TransformDirection (v3_MoveDir);
 
-            if (Input.GetKeyDown(KeyCode.Space))
-                v3_MoveDir.y = f_JumpSpeed;
-        }
+			if (Input.GetKeyDown (KeyCode.Space)) {
+				characterAnimator.SetTrigger ("Jump");
+				StartCoroutine (Jump());
+			}
+
+			if (doJump) {
+				v3_MoveDir.y = f_JumpSpeed;
+				doJump = false;
+			}
+		}
 
         v3_MoveDir.y -= Time.deltaTime * f_Gravity;
         cc_This.Move(v3_MoveDir * Time.deltaTime);
@@ -50,6 +62,16 @@ public class MovementController : MonoBehaviour {
             t_This.rotation = Quaternion.Slerp(t_This.rotation, targetRot, Time.deltaTime * f_RotateSpeed);
         }
     }
+
+	public IEnumerator Jump(){
+		yield return new WaitForSeconds (jumpDelay);
+		doJump = true;
+	}
+
+	public void ResetAnimation(){
+		characterAnimator.SetFloat ("XWalking", 0);
+		characterAnimator.SetFloat ("YWalking", 0);
+	}
 
 	bool B_IsMoving()
 	{
