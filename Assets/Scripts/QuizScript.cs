@@ -11,7 +11,7 @@ public class QuizScript : MonoBehaviour {
 
 	public GameObject combatCanvas;
 	public Button buttonA, buttonB, buttonC, buttonD;
-	public Text questionText;
+	public Text questionText, enemyText;
 
 	public int health;
 
@@ -40,8 +40,10 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void newQuestion(){
-		Text t = combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
-		t.text = health.ToString();
+		Debug.Log("HEALTH: "+health);
+		//Text t = combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
+		//t.text = health.ToString();
+		enemyText.text = health.ToString();
 		currentQuestion = questions [Random.Range (0, questions.Count)];
 		Debug.Log (currentQuestion);
 		buttonA.GetComponentInChildren<Text> ().text = currentQuestion.answerA;
