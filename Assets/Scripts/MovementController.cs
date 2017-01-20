@@ -11,6 +11,8 @@ public class MovementController : MonoBehaviour {
     private Transform t_This;
     private Transform t_CameraReference;
 
+	public Animator characterAnimator;
+
     void Awake()
     {
         cc_This = GetComponent<CharacterController>();
@@ -26,6 +28,12 @@ public class MovementController : MonoBehaviour {
             v3_MoveDir = new Vector3(horizontal, 0, vertical);
 			v3_MoveDir.Normalize ();
 			v3_MoveDir = Vector3.Scale (v3_MoveDir, new Vector3(v2_MoveSpeeds.x, 0, v2_MoveSpeeds.y));
+
+			if (v3_MoveDir.magnitude > 0.01f) {
+				characterAnimator.SetBool ("IsWalking", true);
+			} else {
+				characterAnimator.SetBool ("IsWalking", false);
+			}
 
             t_CameraReference = t_Camera;
             t_CameraReference.eulerAngles = new Vector3(0, t_Camera.eulerAngles.y, 0);
