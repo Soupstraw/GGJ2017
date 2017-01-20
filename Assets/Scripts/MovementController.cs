@@ -41,7 +41,6 @@ public class MovementController : MonoBehaviour {
 
 		if(B_IsMoving())
 		{
-            Debug.Log("s");
             Quaternion targetRot = Quaternion.Euler(new Vector3(t_This.eulerAngles.x, t_Camera.eulerAngles.y, t_This.eulerAngles.z));
             t_This.rotation = Quaternion.Slerp(t_This.rotation, targetRot, Time.deltaTime * f_RotateSpeed);
         }
