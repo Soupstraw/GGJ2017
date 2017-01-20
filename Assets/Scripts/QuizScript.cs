@@ -13,6 +13,9 @@ public class QuizScript : MonoBehaviour {
 	public Button buttonA, buttonB, buttonC, buttonD;
 	public Text questionText;
 
+	public int health;
+
+
 	// Use this for initialization
 	void Start () {
 		questions = new List<Question> ();
@@ -31,6 +34,14 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void CombatStart(){
+		health = 3;
+		combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
+		newQuestion ();
+	}
+
+	public void newQuestion(){
+		Text t = combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
+		t.text = health.ToString();
 		currentQuestion = questions [Random.Range (0, questions.Count)];
 		Debug.Log (currentQuestion);
 		buttonA.GetComponentInChildren<Text> ().text = currentQuestion.answerA;
@@ -43,8 +54,13 @@ public class QuizScript : MonoBehaviour {
 	public void SelectAnswer(int answer){
 		if (currentQuestion.correctAnswer == answer) {
 			Debug.Log ("Correct answer (" + answer + ")!");
+			health--;
+			if (health == 0) {
+				Debug.Log ("U win the fight, do somit here plox");
+			}
 		} else {
 			Debug.Log ("False answer (" + answer + ")! Correct answer was "+currentQuestion.correctAnswer+".");
-		}
+		}	
+		newQuestion ();
 	}
 }
