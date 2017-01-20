@@ -3,6 +3,8 @@ using System.Collections;
 
 public class AICombatTrigger : MonoBehaviour {
 
+	public GameObject combatCanvas;
+
     public Transform t_SelfCamera;
     public Transform t_SelfCameraLocation;
     public float f_MoveCamSpeed;
@@ -49,5 +51,6 @@ public class AICombatTrigger : MonoBehaviour {
 		// INITIATE FAYT SEQUENS
 		Cursor.lockState = CursorLockMode.None;
 		Cursor.visible = true;
+		combatCanvas.SetActive (true);
     }
 }
