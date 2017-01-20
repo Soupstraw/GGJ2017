@@ -27,6 +27,9 @@ public class CameraController : MonoBehaviour
 	{
         t_This = transform;
         q_This = t_This.rotation;
+
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
     }
 
     void Update()

@@ -21,9 +21,11 @@ public class MovementController : MonoBehaviour {
     {
         if (cc_This.isGrounded)
         {
-            float horizontal = Input.GetAxis("Horizontal") * v2_MoveSpeeds.x;
-            float vertical   = Input.GetAxis("Vertical") * v2_MoveSpeeds.y;
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical   = Input.GetAxis("Vertical");
             v3_MoveDir = new Vector3(horizontal, 0, vertical);
+			v3_MoveDir.Normalize ();
+			v3_MoveDir = Vector3.Scale (v3_MoveDir, new Vector3(v2_MoveSpeeds.x, 0, v2_MoveSpeeds.y));
 
             t_CameraReference = t_Camera;
             t_CameraReference.eulerAngles = new Vector3(t_Camera.eulerAngles.x, t_Camera.eulerAngles.y, t_This.eulerAngles.z);
