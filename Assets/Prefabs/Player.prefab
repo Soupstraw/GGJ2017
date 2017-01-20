@@ -875,7 +875,7 @@ Animator:
   m_GameObject: {fileID: 1711801501370462}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ea22898d39f8e8545949b255dc0a2737, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fdd44b360db90254794ff95e275c229e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -899,6 +899,7 @@ MonoBehaviour:
   f_Gravity: 10
   t_Camera: {fileID: 0}
   f_RotateSpeed: 5
+  characterAnimator: {fileID: 95192316608197356}
 --- !u!136 &136596187259185992
 CapsuleCollider:
   m_ObjectHideFlags: 1
