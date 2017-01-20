@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class AICombatTrigger : MonoBehaviour {
 
@@ -52,5 +53,7 @@ public class AICombatTrigger : MonoBehaviour {
 		Cursor.lockState = CursorLockMode.None;
 		Cursor.visible = true;
 		combatCanvas.SetActive (true);
+
+		FindObjectOfType<QuizScript> ().CombatStart ();
     }
 }
