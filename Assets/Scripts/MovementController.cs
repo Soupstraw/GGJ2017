@@ -28,7 +28,7 @@ public class MovementController : MonoBehaviour {
 			v3_MoveDir = Vector3.Scale (v3_MoveDir, new Vector3(v2_MoveSpeeds.x, 0, v2_MoveSpeeds.y));
 
             t_CameraReference = t_Camera;
-            t_CameraReference.eulerAngles = new Vector3(t_Camera.eulerAngles.x, t_Camera.eulerAngles.y, t_This.eulerAngles.z);
+            t_CameraReference.eulerAngles = new Vector3(0, t_Camera.eulerAngles.y, 0);
 
             v3_MoveDir = t_CameraReference.TransformDirection(v3_MoveDir);
 

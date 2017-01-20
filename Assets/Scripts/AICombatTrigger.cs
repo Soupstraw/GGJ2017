@@ -6,7 +6,6 @@ public class AICombatTrigger : MonoBehaviour {
 
 	public GameObject combatCanvas;
 
-    public Transform t_SelfCamera;
     public Transform t_SelfCameraLocation;
     public float f_MoveCamSpeed;
     public Transform t_PlayerLocation;
@@ -18,19 +17,26 @@ public class AICombatTrigger : MonoBehaviour {
 		{
             c.transform.GetComponent<MovementController>().enabled = false;
             Camera.main.transform.GetComponent<CameraController>().enabled = false;
-            t_SelfCamera.position = Camera.main.transform.position;
-            Camera.main.enabled = false;
-            t_SelfCamera.gameObject.SetActive(true);
             t_Player = c.transform;
             StartCoroutine(CO_MoveCam());
         }
 	}
 
+	public void FleeCombat(){
+		t_Player.GetComponent<MovementController>().enabled = true;
+		Camera.main.transform.GetComponent<CameraController>().enabled = true;
+
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+
+		combatCanvas.SetActive (false);
+	}
+
 	IEnumerator CO_MoveCam()
 	{
         float i = 0.0f;
-        Vector3 currentPos = t_SelfCamera.position;
-        Quaternion currentRot = t_SelfCamera.rotation;
+		Vector3 currentPos = Camera.main.transform.position;
+		Quaternion currentRot = Camera.main.transform.rotation;
 
         Vector3 targetPos = t_SelfCameraLocation.position;
         Quaternion targetRot = t_SelfCameraLocation.rotation;
@@ -42,8 +48,8 @@ public class AICombatTrigger : MonoBehaviour {
         while(i < 1.0f)
 		{
             i += Time.deltaTime * f_MoveCamSpeed;
-            t_SelfCamera.position = Vector3.Lerp(currentPos, targetPos, i);
-            t_SelfCamera.rotation = Quaternion.Slerp(currentRot, targetRot, i);
+			Camera.main.transform.position = Vector3.Lerp(currentPos, targetPos, i);
+			Camera.main.transform.rotation = Quaternion.Slerp(currentRot, targetRot, i);
             t_Player.position = Vector3.Lerp(currentPlayerPos, t_PlayerLocation.position, i);
             t_Player.rotation = Quaternion.Slerp(currentPlayerRot, t_PlayerLocation.rotation, i);
             yield return null;
