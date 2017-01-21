@@ -11,6 +11,7 @@ public class SlideHelper : MonoBehaviour {
 
 	public float speed;
 	public float max;
+	public bool lastSlide;
 
 	void Start(){
 		startPoint 	= gameObject.transform.position;
@@ -23,7 +24,12 @@ public class SlideHelper : MonoBehaviour {
     }
 
 	void Update(){
-		if(clicked && transform.position.z > -max)
+		if(clicked && transform.position.y > -max)
     		transform.position += distance * Time.deltaTime * 10;
+
+		if(lastSlide && transform.position.y <= -max){
+			Debug.Log("next scene");
+			Application.LoadLevel("scene0");
+		}
 	}
 }
