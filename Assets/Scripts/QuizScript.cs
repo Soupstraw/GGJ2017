@@ -130,6 +130,10 @@ public class QuizScript : MonoBehaviour {
 		}
 	}
 
+	public void EndCombat(){
+		
+	}
+
 	public void FleeCombat(){
 		aiTrigger.FleeCombat ();
 	}
@@ -226,7 +230,7 @@ public class QuizScript : MonoBehaviour {
 		}
 		setButtonsClickable (true);
 		if (lose) {
-			aiTrigger.FleeCombat ();
+			aiTrigger.EndCombat ();
 		} else if (win) {
 			aiTrigger.FleeCombat ();
 		} else {

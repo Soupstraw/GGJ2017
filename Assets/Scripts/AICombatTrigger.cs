@@ -31,6 +31,17 @@ public class AICombatTrigger : MonoBehaviour {
         }
 	}
 
+	public void EndCombat(){
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+
+		t_Player.GetComponent<MovementController>().enabled = true;
+		Camera.main.transform.GetComponent<CameraController>().enabled = true;
+		t_Player.GetComponentInChildren<MovementController> ().ResetAnimation ();
+
+		combatCanvas.SetActive (false);
+	}
+
 	public void FleeCombat(){
 
 		StartCoroutine (CO_Flee(fleeLocation));
