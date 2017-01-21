@@ -32,7 +32,7 @@ public class SlideHelper : MonoBehaviour {
 			"And after the hit everybody lost their mind and started to act weird."
 		};
 
-		subtitle.text = story[index];
+		subtitle.text = story[1];
 	}
 
 	void OnMouseDown() {
