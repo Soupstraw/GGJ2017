@@ -169,6 +169,7 @@ public class QuizScript : MonoBehaviour {
 			} else {
 				GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Animator> ().Play ("Attack");
 				GameObject.FindGameObjectWithTag ("Player").GetComponent<ParticleSystem> ().Play ();
+				StartCoroutine (aiTrigger.CO_ShakeAndGlow ());
 			}
 		} else {
 			colorButton (currentQuestion.correctAnswer, greenColor);

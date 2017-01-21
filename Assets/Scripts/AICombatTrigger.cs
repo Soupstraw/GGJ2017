@@ -12,6 +12,8 @@ public class AICombatTrigger : MonoBehaviour {
 	public Transform fleeLocation;
     private Transform t_Player;
 
+	public float shakeDuration = 1f;
+
 	void Start(){
 		t_Player = GameObject.FindWithTag ("Player").transform;
 	}
@@ -112,5 +114,20 @@ public class AICombatTrigger : MonoBehaviour {
 		t_Player.GetComponent<MovementController>().enabled = true;
 		Camera.main.transform.GetComponent<CameraController>().enabled = true;
 		t_Player.GetComponentInChildren<MovementController> ().ResetAnimation ();
+	}
+
+	public IEnumerator CO_ShakeAndGlow(){
+		Vector3 cameraPosition = Camera.main.transform.position;
+
+		float time = 0f;
+
+		yield return new WaitForSeconds (1f);
+
+		while (time < shakeDuration) {
+			time += Time.deltaTime;
+			Camera.main.transform.position = cameraPosition + new Vector3 (Mathf.Sin(time*10f*Mathf.PI)*0.5f*Mathf.Sin(time/shakeDuration*Mathf.PI), Mathf.Sin(time)*0.1f, 0);
+			GetComponentInChildren<SkinnedMeshRenderer> ().material.color = Color.Lerp (Color.white, Color.red, Mathf.Sin(time*Mathf.PI*2));
+			yield return null;
+		}
 	}
 }
