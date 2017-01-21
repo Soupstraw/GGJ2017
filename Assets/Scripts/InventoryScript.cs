@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class InventoryScript : MonoBehaviour {
 
 	public Image[] inventoryBoxes;
+	public ItemScript[] items;
 
 	public SkinnedMeshRenderer penRenderer;
 	public SkinnedMeshRenderer bookRenderer;
@@ -28,7 +29,23 @@ public class InventoryScript : MonoBehaviour {
 		
 	}
 
+	public void UseItem(int slot){
+		ItemScript item = items [slot];
+		if (item != null) {
+			item.Use ();
+		}
+	}
+
 	void AddItem(ItemScript item){
+		
+		for (int i = 0; i < items.Length; i++) {
+			if (items[i] == null) {
+				items [i] = item;
+				inventoryBoxes [i].sprite = item.itemIcon;
+				break;
+			}
+		}
+
 		switch (item.itemType) {
 		case ItemType.BOOK:
 			if(bookRenderer != null)

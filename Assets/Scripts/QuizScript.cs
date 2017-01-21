@@ -22,6 +22,8 @@ public class QuizScript : MonoBehaviour {
 	private Color32 greenColor;
 	private List<Question> theQuestions;
 
+	public float timer;
+
 
 	// Use this for initialization
 	void Start () {
@@ -45,6 +47,14 @@ public class QuizScript : MonoBehaviour {
 		questions.Add (new Question ("Palju maksab 1 eurone leib",
 			"1 euro + taara","1 euro - taara","1 euro","taara", 2));	
 	}
+
+	void OnEnable(){
+		ItemScript.OnItemUse += DoItemEffect;
+	}
+
+	void OnDisable(){
+		ItemScript.OnItemUse -= DoItemEffect;
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -58,7 +68,7 @@ public class QuizScript : MonoBehaviour {
 		combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
 		newQuestion ();
 	}
-
+		
 	public List<Question> generateQuestionArray(){
 		List<Question> questionsCopy = new List<Question>();
 		for (int i = 0; i < questions.Count; i++){
@@ -77,6 +87,26 @@ public class QuizScript : MonoBehaviour {
 			questionsCopy.Remove (thatWillBeAdded);
 		}
 		return questionsList;
+	}
+
+	public void DoItemEffect(ItemScript item){
+		switch (item.itemType) {
+		case ItemType.BOOK:
+			timer += 5f;
+			break;
+		case ItemType.PEN:
+			int ans;
+			do {
+				ans = Random.Range (0, 3);
+			} while(ans == currentQuestion.correctAnswer);
+
+			Button button = numberToButton (ans);
+			ColorBlock cb = button.colors;
+			cb.disabledColor = Color.black;
+			button.colors = cb;
+			button.interactable = false;
+			break;
+		}
 	}
 
 	public void newQuestion(){
