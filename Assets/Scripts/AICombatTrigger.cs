@@ -31,6 +31,8 @@ public class AICombatTrigger : MonoBehaviour {
 		Cursor.visible = false;
 
 		combatCanvas.SetActive (false);
+
+		GetComponentInChildren<Animator> ().SetTrigger ("Win");
 	}
 
 	IEnumerator CO_MoveCam()

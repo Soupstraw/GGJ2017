@@ -89,7 +89,7 @@ public class QuizScript : MonoBehaviour {
 			colorButton (currentQuestion.correctAnswer, greenColor);
 			health--;	
 			if (health == 0) {
-				Debug.Log ("U win the fight, do somit here plox");
+				aiTrigger.GetComponentInChildren<Animator> ().SetTrigger ("Lose");
 			}
 		} else {
 			colorButton (currentQuestion.correctAnswer, greenColor);
