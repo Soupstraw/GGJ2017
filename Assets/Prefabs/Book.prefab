@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 93d9e088dfa7d2445b6fa6d194c52e15, type: 3}
   itemMeshRenderer: {fileID: 0}
 --- !u!135 &135137625844696794
 SphereCollider:

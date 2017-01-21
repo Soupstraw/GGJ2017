@@ -21,6 +21,8 @@ public class QuizScript : MonoBehaviour {
 	private Color32 pinkColor;
 	private Color32 greenColor;
 
+	public float timer;
+
 
 	// Use this for initialization
 	void Start () {
@@ -38,6 +40,14 @@ public class QuizScript : MonoBehaviour {
 			"5 minutit","7.5 minutit","10 minutit","12.5 minutit", 0));
 		
 	}
+
+	void OnEnable(){
+		ItemScript.OnItemUse += DoItemEffect;
+	}
+
+	void OnDisable(){
+		ItemScript.OnItemUse -= DoItemEffect;
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -48,6 +58,26 @@ public class QuizScript : MonoBehaviour {
 		health = 3;
 		combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
 		newQuestion ();
+	}
+
+	public void DoItemEffect(ItemScript item){
+		switch (item.itemType) {
+		case ItemType.BOOK:
+			timer += 5f;
+			break;
+		case ItemType.PEN:
+			int ans;
+			do {
+				ans = Random.Range (0, 3);
+			} while(ans == currentQuestion.correctAnswer);
+
+			Button button = numberToButton (ans);
+			ColorBlock cb = button.colors;
+			cb.disabledColor = Color.black;
+			button.colors = cb;
+			button.interactable = false;
+			break;
+		}
 	}
 
 	public void newQuestion(){

@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class ItemScript : MonoBehaviour {
 
 	public delegate void ItemAction(ItemScript item);
+	public static event ItemAction OnItemUse;
 
 	public ItemType itemType;
-	public Image itemIcon;
+	public Sprite itemIcon;
 	public SkinnedMeshRenderer itemMeshRenderer;
+
+	public bool isUsed = false;
 
 	// Use this for initialization
 	void Start () {
@@ -29,5 +32,12 @@ public class ItemScript : MonoBehaviour {
 
 	public virtual void OnItemPickup(){
 		
+	}
+
+	public void Use(){
+		if (!isUsed) {
+			isUsed = true;
+			OnItemUse (this);
+		}
 	}
 }
