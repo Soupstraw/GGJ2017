@@ -9,3 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
   - enabled: 1
     path: Assets/Scenes/scene0.unity
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+  - enabled: 1
+    path: Assets/Scenes/Outro.unity
