@@ -9,6 +9,7 @@ public class PickupItem : ItemScript{
 	public void OnTriggerEnter(Collider col){
 		GetComponentInChildren<MeshRenderer> ().enabled = false;
 		GetComponentInChildren<Collider> ().enabled = false;
+		GetComponentInChildren<ParticleSystem> ().Stop ();
 		OnItemPickup (this);
 	}
 }
