@@ -11,11 +11,12 @@ public class QuizScript : MonoBehaviour {
 
 	public GameObject combatCanvas;
 	public Button buttonA, buttonB, buttonC, buttonD;
-	public Text questionText, enemyText;
+	public Text questionText, enemyText, playerText;
 
 	public AICombatTrigger aiTrigger;
 
-	private int health;
+	private int enemyHealth;
+	private int playerHealth;
 	private int lastQuestion;
 	private ColorBlock normalColors;
 	private Color32 pinkColor;
@@ -61,9 +62,10 @@ public class QuizScript : MonoBehaviour {
 		
 	}
 
-	public void CombatStart(){
+	public void CombatStart(){	
 		lastQuestion = -1;
-		health = 3;
+		playerHealth = 3;
+		enemyHealth = 3;
 		theQuestions = generateQuestionArray ();
 		combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
 		newQuestion ();
@@ -79,7 +81,7 @@ public class QuizScript : MonoBehaviour {
 		Debug.Log ("questionscopy filled " + questionsCopy.Count);
 		List<Question> questionsList = new List<Question> ();
 
-		for (int i = 0; i < 2*health; i++) {
+		for (int i = 0; i < 2*enemyHealth; i++) {
 			int randomIndex = Random.Range (0, questionsCopy.Count);
 			Debug.Log ("rnd "+randomIndex);
 			Debug.Log ("cnt "+questionsCopy.Count);
@@ -112,10 +114,11 @@ public class QuizScript : MonoBehaviour {
 
 	public void newQuestion(){
 		lastQuestion++;
-		Debug.Log("HEALTH: "+health);	
+		Debug.Log("HEALTH: "+enemyHealth);	
 		//Text t = combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
 		//t.text = health.ToString();
-		enemyText.text = health.ToString();
+		enemyText.text = enemyHealth.ToString();
+		playerText.text = playerHealth.ToString ();
 
 		Debug.Log ("lastQ " + lastQuestion);
 		Debug.Log ("curQCount " + theQuestions.Count);
@@ -130,18 +133,19 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void SelectAnswer(int answer){
-		StartCoroutine (CO_DisableButtons(currentQuestion.correctAnswer == answer && health == 1));
+		StartCoroutine (CO_DisableButtons(currentQuestion.correctAnswer == answer && enemyHealth == 1, currentQuestion.correctAnswer != answer && playerHealth == 1));
 		if (currentQuestion.correctAnswer == answer) {
 			Debug.Log ("Correct answer (" + answer + ")!");
 			colorButton (currentQuestion.correctAnswer, greenColor);
-			health--;	
-			if (health == 0) {
+			enemyHealth--;	
+			if (enemyHealth == 0) {
 				aiTrigger.GetComponentInChildren<Animator> ().SetTrigger ("Lose");
 			}
 		} else {
 			colorButton (currentQuestion.correctAnswer, greenColor);
 			colorButton (answer, pinkColor);
 			Debug.Log ("False answer (" + answer + ")! Correct answer was "+currentQuestion.correctAnswer+".");
+			playerHealth--;
 		}	
 	}
 
@@ -181,7 +185,7 @@ public class QuizScript : MonoBehaviour {
 	}
 
 
-	IEnumerator CO_DisableButtons(bool input){
+	IEnumerator CO_DisableButtons(bool lose, bool win){
 		setButtonsClickable (false);
 		float i = 0.0f;
 		while(i < 2.4f)
@@ -190,7 +194,9 @@ public class QuizScript : MonoBehaviour {
 			yield return null;
 		}
 		setButtonsClickable (true);
-		if (input) {
+		if (lose) {
+			aiTrigger.FleeCombat ();
+		} else if (win) {
 			aiTrigger.FleeCombat ();
 		} else {
 			newQuestion ();
