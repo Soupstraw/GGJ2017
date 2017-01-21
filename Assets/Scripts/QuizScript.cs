@@ -20,6 +20,7 @@ public class QuizScript : MonoBehaviour {
 	private ColorBlock normalColors;
 	private Color32 pinkColor;
 	private Color32 greenColor;
+	private List<Question> theQuestions;
 
 
 	// Use this for initialization
@@ -28,7 +29,6 @@ public class QuizScript : MonoBehaviour {
 		pinkColor = new Color32 (227, 42, 106, 255);
 		greenColor = new Color32 (122, 176, 67, 255);
 		setButtonsClickable (true);
-		lastQuestion = -1;
 		questions = new List<Question> ();
 		questions.Add (new Question ("Mis värvi on armastus?",
 			"Sinine","Kes seda teab...","#FF0000","Kartulivärvi", 1));
@@ -36,7 +36,14 @@ public class QuizScript : MonoBehaviour {
 			"Brobama","Cave Johnson","Clinton","Drumpf", 3));
 		questions.Add (new Question ("Kui 5 küünalt põlevad 5 minutit, siis 10 küünalt põlevad mitu minutit?",
 			"5 minutit","7.5 minutit","10 minutit","12.5 minutit", 0));
-		
+		questions.Add (new Question ("Küsimus",
+			"Õigem vastus","Valem vastus","NullPointerException","Vastus", 3));
+		questions.Add (new Question ("How much wood would a woodchuck if a woodchuck could chuck wood",
+			"Palun EI","2 tihu","7 tihu","Ma ei tea", 3));
+		questions.Add (new Question ("Desoksüribonukleeinhappe paarid",
+			"A-G ja C-T","A-C ja G-T","A-T ja C-G","A-G ja T-C", 2));
+		questions.Add (new Question ("Palju maksab 1 eurone leib",
+			"1 euro + taara","1 euro - taara","1 euro","taara", 2));	
 	}
 	
 	// Update is called once per frame
@@ -45,35 +52,44 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void CombatStart(){
+		lastQuestion = -1;
 		health = 3;
+		theQuestions = generateQuestionArray ();
 		combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
 		newQuestion ();
 	}
 
+	public List<Question> generateQuestionArray(){
+		List<Question> questionsCopy = new List<Question>();
+		for (int i = 0; i < questions.Count; i++){
+			questionsCopy.Add (questions [i]);
+			Debug.Log (questions [i].question);
+		}
+		Debug.Log ("questionscopy filled " + questionsCopy.Count);
+		List<Question> questionsList = new List<Question> ();
+
+		for (int i = 0; i < 2*health; i++) {
+			int randomIndex = Random.Range (0, questionsCopy.Count);
+			Debug.Log ("rnd "+randomIndex);
+			Debug.Log ("cnt "+questionsCopy.Count);
+			Question thatWillBeAdded = questionsCopy [randomIndex];
+			questionsList.Add (thatWillBeAdded);
+			questionsCopy.Remove (thatWillBeAdded);
+		}
+		return questionsList;
+	}
+
 	public void newQuestion(){
-		Debug.Log("HEALTH: "+health);
+		lastQuestion++;
+		Debug.Log("HEALTH: "+health);	
 		//Text t = combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
 		//t.text = health.ToString();
 		enemyText.text = health.ToString();
 
-		int counter = 0; //just in case we have extremely bad/good luck
-		while (true) {
-			counter++;
-			int randomInt = Random.Range (0, questions.Count);
-			if (lastQuestion == -1) {
-				lastQuestion = randomInt;
-				break;
-			} else if (randomInt != lastQuestion) {
-				lastQuestion = randomInt;
-				break;
-			} else if (questions.Capacity < 2) {
-				break;
-			} else if (counter > 20) {
-				break;
-			}	
-		}
-		Debug.Log (counter);
-		currentQuestion = questions [lastQuestion];
+		Debug.Log ("lastQ " + lastQuestion);
+		Debug.Log ("curQCount " + theQuestions.Count);
+
+		currentQuestion = theQuestions [lastQuestion];
 		//Debug.Log (currentQuestion);
 		buttonA.GetComponentInChildren<Text> ().text = currentQuestion.answerA;
 		buttonB.GetComponentInChildren<Text> ().text = currentQuestion.answerB;
