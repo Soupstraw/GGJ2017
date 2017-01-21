@@ -130,6 +130,10 @@ public class QuizScript : MonoBehaviour {
 		}
 	}
 
+	public void FleeCombat(){
+		aiTrigger.FleeCombat ();
+	}
+
 	public void newQuestion(){
 		timer = timerMax;
 		timerRunning = true;

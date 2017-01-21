@@ -9,6 +9,7 @@ public class AICombatTrigger : MonoBehaviour {
     public Transform t_SelfCameraLocation;
     public float f_MoveCamSpeed;
     public Transform t_PlayerLocation;
+	public Transform fleeLocation;
     private Transform t_Player;
 
 	void Start(){
@@ -24,12 +25,13 @@ public class AICombatTrigger : MonoBehaviour {
             t_Player = c.transform;
 			FindObjectOfType<QuizScript> ().aiTrigger = this;
             StartCoroutine(CO_MoveCam());
+			StartCoroutine (CO_MovePlayer(t_PlayerLocation));
         }
 	}
 
 	public void FleeCombat(){
-		t_Player.GetComponent<MovementController>().enabled = true;
-		Camera.main.transform.GetComponent<CameraController>().enabled = true;
+
+		StartCoroutine (CO_Flee(fleeLocation));
 
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
@@ -71,4 +73,44 @@ public class AICombatTrigger : MonoBehaviour {
 
 		FindObjectOfType<QuizScript> ().CombatStart ();
     }
+
+	IEnumerator CO_MovePlayer(Transform target){
+		float i = 0.0f;
+
+		Vector3 currentPlayerPos = t_Player.position;
+		Quaternion currentPlayerRot = t_Player.rotation;
+
+		t_Player.GetComponentInChildren<Animator> ().Play ("Flee");
+
+		while(i < 1.0f)
+		{
+			i += Time.deltaTime * f_MoveCamSpeed;
+			t_Player.position = Vector3.Lerp(currentPlayerPos, target.position, i);
+			t_Player.rotation = Quaternion.Slerp(currentPlayerRot, target.rotation, i);
+			yield return null;
+		}
+
+		t_Player.GetComponentInChildren<MovementController> ().ResetAnimation ();
+	}
+
+	IEnumerator CO_Flee(Transform target){
+		float i = 0.0f;
+
+		Vector3 currentPlayerPos = t_Player.position;
+		Quaternion currentPlayerRot = t_Player.rotation;
+
+		t_Player.GetComponentInChildren<Animator> ().Play ("Flee");
+
+		while(i < 1.0f)
+		{
+			i += Time.deltaTime * f_MoveCamSpeed;
+			t_Player.position = Vector3.Lerp(currentPlayerPos, target.position, i);
+			t_Player.rotation = Quaternion.Slerp(currentPlayerRot, target.rotation, i);
+			yield return null;
+		}
+
+		t_Player.GetComponent<MovementController>().enabled = true;
+		Camera.main.transform.GetComponent<CameraController>().enabled = true;
+		t_Player.GetComponentInChildren<MovementController> ().ResetAnimation ();
+	}
 }
