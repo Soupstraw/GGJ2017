@@ -25,13 +25,8 @@ public class ItemScript : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider col){
-		OnItemPickup ();
 		GetComponentInChildren<MeshRenderer> ().enabled = false;
 		GetComponent<Collider> ().enabled = false;
-	}
-
-	public virtual void OnItemPickup(){
-		
 	}
 
 	public void Use(){

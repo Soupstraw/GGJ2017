@@ -157,6 +157,36 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9263ef42908ba9d449eb747ba078350f, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &26536495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 26536496}
+  m_Layer: 0
+  m_Name: CinematicCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &26536496
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 26536495}
+  m_LocalRotation: {x: 0.045560885, y: 0.8575441, z: -0.07713052, w: 0.50655025}
+  m_LocalPosition: {x: 8.719574, y: 20.025227, z: -26.345627}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 351834579}
+  - {fileID: 1674711765}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &66438860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1377,6 +1407,34 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57b349e9380f91043a311fc848086832, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &351834578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 351834579}
+  m_Layer: 0
+  m_Name: CinematicCameraEndPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &351834579
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 351834578}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 26536496}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &352952968
 GameObject:
   m_ObjectHideFlags: 0
@@ -8760,7 +8818,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2000104258
+  randomSeed: -1242149265
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13329,7 +13387,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1674711760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13338,16 +13396,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1674711759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77582445d7d086742bb8c0654125c1c4, type: 3}
+  m_Script: {fileID: 11500000, guid: e4c6ee019d7151f43b5a49f5e0b5ea16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camEndPos: {fileID: 351834579}
+  panTime: 3
 --- !u!81 &1674711761
 AudioListener:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1674711759}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &1674711762
 Behaviour:
   m_ObjectHideFlags: 0
@@ -13368,7 +13428,7 @@ Camera:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1674711759}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -13402,12 +13462,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1674711759}
-  m_LocalRotation: {x: 0.045560885, y: 0.8575441, z: -0.07713052, w: 0.50655025}
-  m_LocalPosition: {x: -40.9, y: 30.3, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -57.579998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 26536496}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 10.279, y: 118.85901, z: 0}
 --- !u!1 &1678608384 stripped
 GameObject:
@@ -14013,7 +14073,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -18292587
+  randomSeed: 1208957091
   InitialModule:
     serializedVersion: 3
     enabled: 1
