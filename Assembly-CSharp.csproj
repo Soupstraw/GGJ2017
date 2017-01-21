@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\ItemType.cs" />
      <Compile Include="Assets\Scripts\MonsterAttributes.cs" />
      <Compile Include="Assets\Scripts\MovementController.cs" />
+     <Compile Include="Assets\Scripts\OutroHelper.cs" />
      <Compile Include="Assets\Scripts\PickupItem.cs" />
      <Compile Include="Assets\Scripts\Question.cs" />
      <Compile Include="Assets\Scripts\QuizScript.cs" />

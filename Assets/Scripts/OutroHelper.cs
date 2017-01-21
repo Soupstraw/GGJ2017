@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SlideHelper : MonoBehaviour {
+public class OutroHelper : MonoBehaviour {
 	private Vector3 startPoint;
 	private Vector3 endPoint;
 	private Vector3 distance = new Vector3(0, -5, 0);
@@ -26,7 +26,7 @@ public class SlideHelper : MonoBehaviour {
 
 		if(lastSlide && transform.position.y <= -max){
 			Debug.Log("next scene");
-			Application.LoadLevel("scene0");
+			Application.LoadLevel("menu");
 		}
 	}
 }
