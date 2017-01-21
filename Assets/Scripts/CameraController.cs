@@ -40,7 +40,6 @@ public class CameraController : MonoBehaviour
         v2_Inputs.x += Input.GetAxis("Mouse X") * v2_Sensitivity.x;
         v2_Inputs.y -= Input.GetAxis("Mouse Y") * v2_Sensitivity.y;
 
-        v2_Inputs.x = v2_Inputs.x;
         v2_Inputs.y = Mathf.Clamp(v2_Inputs.y, MinMaxYAngles.x, MinMaxYAngles.y);
 
         v2_SmoothedInputs.x = Mathf.SmoothDamp(v2_SmoothedInputs.x, v2_Inputs.x, ref v2_SmoothRef.x, v2_Smooth.x);

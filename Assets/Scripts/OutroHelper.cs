@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OutroHelper : MonoBehaviour {
 	private Vector3 startPoint;
@@ -26,7 +27,7 @@ public class OutroHelper : MonoBehaviour {
 
 		if(lastSlide && transform.position.y <= -max){
 			Debug.Log("next scene");
-			Application.LoadLevel("menu");
+			SceneManager.LoadScene("menu");
 		}
 	}
 }

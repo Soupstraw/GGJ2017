@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SlideHelper : MonoBehaviour {
 	private Vector3 startPoint;
@@ -49,7 +50,7 @@ public class SlideHelper : MonoBehaviour {
 
 		if(lastSlide && transform.position.y <= -max){
 			Debug.Log("next scene");
-			Application.LoadLevel("scene0");
+			SceneManager.LoadScene("scene0");
 		}
 	}
 }
