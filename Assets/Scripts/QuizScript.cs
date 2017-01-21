@@ -30,7 +30,11 @@ public class QuizScript : MonoBehaviour {
 	private List<Question> theQuestions;
 
 	public float timer;
+	public float timerMax = 10f;
 
+	public bool timerRunning = false;
+
+	public RectTransform timerBar;
 
 	// Use this for initialization
 	void Start () {
@@ -65,7 +69,10 @@ public class QuizScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (timerRunning) {
+			timer -= Time.deltaTime;
+			timerBar.localScale = new Vector3 (timer / timerMax, 1, 1);
+		}
 	}
 
 	public void CombatStart(){
@@ -121,6 +128,8 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void newQuestion(){
+		timer = timerMax;
+		timerRunning = true;
 		lastQuestion++;
 		//Debug.Log("HEALTH: "+enemyHealth);	
 		//Text t = combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
@@ -141,6 +150,7 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void SelectAnswer(int answer){
+		timerRunning = false;
 		StartCoroutine (CO_DisableButtons(currentQuestion.correctAnswer == answer && enemyHealth == 1, currentQuestion.correctAnswer != answer && playerHealth == 1));
 		if (currentQuestion.correctAnswer == answer) {
 			Debug.Log ("Correct answer (" + answer + ")!");
