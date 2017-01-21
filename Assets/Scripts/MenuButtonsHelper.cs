@@ -6,10 +6,7 @@ public class MenuButtonsHelper : MonoBehaviour {
 
 	void OnMouseDown() {
 		if(gameObject.name == "Play"){
-			Application.LoadLevel("intro");
-		}
-		else if(gameObject.name == "Credits"){
-			Application.LoadLevel("credits");
+			Application.LoadLevel("Intro");
 		}
 		else if(gameObject.name == "Quit"){
 			Application.Quit();
