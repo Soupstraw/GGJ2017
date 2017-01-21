@@ -162,12 +162,16 @@ public class QuizScript : MonoBehaviour {
 			if (enemyHealth == 0) {
 				GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Animator> ().Play ("Win");
 				aiTrigger.GetComponentInChildren<Animator> ().SetTrigger ("Lose");
+			} else {
+				GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Animator> ().Play ("Attack");
+				GameObject.FindGameObjectWithTag ("Player").GetComponent<ParticleSystem> ().Play ();
 			}
 		} else {
 			colorButton (currentQuestion.correctAnswer, greenColor);
 			colorButton (answer, pinkColor);
 			Debug.Log ("False answer (" + answer + ")! Correct answer was "+currentQuestion.correctAnswer+".");
 			playerHealth--;
+			GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Animator> ().Play ("Lose");
 		}	
 	}
 
