@@ -11,6 +11,10 @@ public class AICombatTrigger : MonoBehaviour {
     public Transform t_PlayerLocation;
     private Transform t_Player;
 
+	void Start(){
+		t_Player = GameObject.FindWithTag ("Player").transform;
+	}
+
     void OnTriggerEnter(Collider c)
 	{
 		if(c.CompareTag("Player"))
