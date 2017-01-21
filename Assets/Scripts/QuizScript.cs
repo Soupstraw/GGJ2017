@@ -67,6 +67,7 @@ public class QuizScript : MonoBehaviour {
 		theQuestions = generateQuestionArray ();
 		combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
 		newQuestion ();
+		GameObject.Find ("GameLogic").GetComponent<InventoryScript> ().ResetItems ();
 	}
 		
 	public List<Question> generateQuestionArray(){

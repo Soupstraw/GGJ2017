@@ -57,4 +57,12 @@ public class InventoryScript : MonoBehaviour {
 			break;
 		}
 	}
+
+	public void ResetItems(){
+		foreach (ItemScript item in items) {
+			if (item != null) {
+				item.isUsed = false;
+			}
+		}
+	}
 }
