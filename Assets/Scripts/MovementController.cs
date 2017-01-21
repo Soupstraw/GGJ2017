@@ -42,10 +42,10 @@ public class MovementController : MonoBehaviour {
 
 			v3_MoveDir = t_CameraReference.TransformDirection (v3_MoveDir);
 
-			if (Input.GetKeyDown (KeyCode.Space)) {
+			/*if (Input.GetKeyDown (KeyCode.Space)) {
 				characterAnimator.SetTrigger ("Jump");
 				StartCoroutine (Jump());
-			}
+			}*/
 
 			if (doJump) {
 				v3_MoveDir.y = f_JumpSpeed;
