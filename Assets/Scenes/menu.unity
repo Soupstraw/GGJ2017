@@ -555,8 +555,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "GGJ 2017 @ APT GameGenerator - Tartu\n\nSercan Altunda\u015F\r | Joosep
-    J\xE4\xE4ger\r | Leene K\xFCnnap\r | Daniel K\xFCtt\r  | Stanislav Belogrivov\n\n\n"
+  m_Text: "GGJ 2017 @ APT GameGenerator - Tartu\n\nSercan Altunda\u015F\r  |  Joosep
+    J\xE4\xE4ger \r |  Leene K\xFCnnap \r |  Daniel K\xFCtt\r  |  Stanislav Belogrivov\n\n\n"
 --- !u!222 &666415144
 CanvasRenderer:
   m_ObjectHideFlags: 0

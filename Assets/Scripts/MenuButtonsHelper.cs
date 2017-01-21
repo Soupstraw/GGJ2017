@@ -21,10 +21,10 @@ public class MenuButtonsHelper : MonoBehaviour {
     }
 
 	void OnMouseOver(){
-        gameObject.GetComponent<Renderer> ().material.color = Color.red;
+        gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
 	}
 
 	void OnMouseExit(){
-        gameObject.GetComponent<Renderer> ().material.color = Color.blue;
+        gameObject.GetComponent<Renderer> ().material.color = Color.white;
 	}
 }
