@@ -50,8 +50,9 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\InventoryScript.cs" />
      <Compile Include="Assets\Scripts\ItemScript.cs" />
+     <Compile Include="Assets\Scripts\ItemType.cs" />
      <Compile Include="Assets\Scripts\MovementController.cs" />
-     <Compile Include="Assets\Scripts\PenItemScript.cs" />
+     <Compile Include="Assets\Scripts\PickupItem.cs" />
      <Compile Include="Assets\Scripts\Question.cs" />
      <Compile Include="Assets\Scripts\QuizScript.cs" />
  <Reference Include="UnityEngine.UI">
