@@ -9,8 +9,7 @@ public class CameraController : MonoBehaviour
     public Vector2 v2_Sensitivity;
     public Vector2 v2_Smooth;
     public float f_DistanceToTarget;
-    public Vector2 v2_MinAngles;
-    public Vector2 v2_MaxAngles;
+    public Vector2 MinMaxYAngles;
 
     private Vector2 v2_Inputs;
     private Vector2 v2_SmoothedInputs;
@@ -42,7 +41,7 @@ public class CameraController : MonoBehaviour
         v2_Inputs.y -= Input.GetAxis("Mouse Y") * v2_Sensitivity.y;
 
         v2_Inputs.x = v2_Inputs.x;
-        v2_Inputs.y = Mathf.Clamp(v2_Inputs.y, v2_MinAngles.y, v2_MaxAngles.y);
+        v2_Inputs.y = Mathf.Clamp(v2_Inputs.y, MinMaxYAngles.x, MinMaxYAngles.y);
 
         v2_SmoothedInputs.x = Mathf.SmoothDamp(v2_SmoothedInputs.x, v2_Inputs.x, ref v2_SmoothRef.x, v2_Smooth.x);
         v2_SmoothedInputs.y = Mathf.SmoothDamp(v2_SmoothedInputs.y, v2_Inputs.y, ref v2_SmoothRef.y, v2_Smooth.y);
