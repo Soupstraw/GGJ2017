@@ -110,7 +110,431 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/head
+        weight: 1
+      - path: Armature/head/a1
+        weight: 1
+      - path: Armature/head/a1/a2
+        weight: 1
+      - path: Armature/head/a1/a2/d
+        weight: 1
+      - path: Armature/head/a1/a2/d/g
+        weight: 1
+      - path: Armature/head/a1/a2/d/g/h33
+        weight: 1
+      - path: Armature/head/a1/a2/h11
+        weight: 1
+      - path: Armature/head/a1/a2/h11/h12
+        weight: 1
+      - path: Armature/head/a1/a2/h11/h12/h13
+        weight: 1
+      - path: Armature/head/a1/a2/h21
+        weight: 1
+      - path: Armature/head/a1/a2/h21/h22
+        weight: 1
+      - path: Armature/head/a1/a2/h21/h22/h23
+        weight: 1
+      - path: Armature/head/a1/a2/h41
+        weight: 1
+      - path: Armature/head/a1/a2/h41/h42
+        weight: 1
+      - path: Armature/head/a1/a2/h41/h42/h43
+        weight: 1
+      - path: Armature/head/chin
+        weight: 1
+      - path: Armature/head/chin/l11
+        weight: 1
+      - path: Armature/head/chin/l11/l12
+        weight: 1
+      - path: Armature/head/chin/l11/l12/f1
+        weight: 1
+      - path: Armature/head/chin/l21
+        weight: 1
+      - path: Armature/head/chin/l21/l22
+        weight: 1
+      - path: Armature/head/chin/l21/l22/f2
+        weight: 1
+      - path: Armature/head/r1
+        weight: 1
+      - path: Armature/head/r1/r2
+        weight: 1
+      - path: Armature/head/r1/r2/h
+        weight: 1
+      - path: Armature/head/r1/r2/h/v
+        weight: 1
+      - path: Armature/head/r1/r2/h/v/x
+        weight: 1
+      - path: Armature/head/r1/r2/r3
+        weight: 1
+      - path: Armature/head/r1/r2/r3/r3_001
+        weight: 1
+      - path: Armature/head/r1/r2/r3/r3_001/r4
+        weight: 1
+      - path: Armature/head/r1/r2/r5
+        weight: 1
+      - path: Armature/head/r1/r2/r5/r6
+        weight: 1
+      - path: Armature/head/r1/r2/r5/r6/r7
+        weight: 1
+      - path: Armature/head/r1/r2/r44
+        weight: 1
+      - path: Armature/head/r1/r2/r44/3
+        weight: 1
+      - path: Armature/head/r1/r2/r44/3/e
+        weight: 1
+      - path: Boss
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/head
+        weight: 1
+      - path: Armature/head/a1
+        weight: 1
+      - path: Armature/head/a1/a2
+        weight: 1
+      - path: Armature/head/a1/a2/d
+        weight: 1
+      - path: Armature/head/a1/a2/d/g
+        weight: 1
+      - path: Armature/head/a1/a2/d/g/h33
+        weight: 1
+      - path: Armature/head/a1/a2/h11
+        weight: 1
+      - path: Armature/head/a1/a2/h11/h12
+        weight: 1
+      - path: Armature/head/a1/a2/h11/h12/h13
+        weight: 1
+      - path: Armature/head/a1/a2/h21
+        weight: 1
+      - path: Armature/head/a1/a2/h21/h22
+        weight: 1
+      - path: Armature/head/a1/a2/h21/h22/h23
+        weight: 1
+      - path: Armature/head/a1/a2/h41
+        weight: 1
+      - path: Armature/head/a1/a2/h41/h42
+        weight: 1
+      - path: Armature/head/a1/a2/h41/h42/h43
+        weight: 1
+      - path: Armature/head/chin
+        weight: 1
+      - path: Armature/head/chin/l11
+        weight: 1
+      - path: Armature/head/chin/l11/l12
+        weight: 1
+      - path: Armature/head/chin/l11/l12/f1
+        weight: 1
+      - path: Armature/head/chin/l21
+        weight: 1
+      - path: Armature/head/chin/l21/l22
+        weight: 1
+      - path: Armature/head/chin/l21/l22/f2
+        weight: 1
+      - path: Armature/head/r1
+        weight: 1
+      - path: Armature/head/r1/r2
+        weight: 1
+      - path: Armature/head/r1/r2/h
+        weight: 1
+      - path: Armature/head/r1/r2/h/v
+        weight: 1
+      - path: Armature/head/r1/r2/h/v/x
+        weight: 1
+      - path: Armature/head/r1/r2/r3
+        weight: 1
+      - path: Armature/head/r1/r2/r3/r3_001
+        weight: 1
+      - path: Armature/head/r1/r2/r3/r3_001/r4
+        weight: 1
+      - path: Armature/head/r1/r2/r5
+        weight: 1
+      - path: Armature/head/r1/r2/r5/r6
+        weight: 1
+      - path: Armature/head/r1/r2/r5/r6/r7
+        weight: 1
+      - path: Armature/head/r1/r2/r44
+        weight: 1
+      - path: Armature/head/r1/r2/r44/3
+        weight: 1
+      - path: Armature/head/r1/r2/r44/3/e
+        weight: 1
+      - path: Boss
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lose
+      takeName: Lose
+      firstFrame: 0
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/head
+        weight: 1
+      - path: Armature/head/a1
+        weight: 1
+      - path: Armature/head/a1/a2
+        weight: 1
+      - path: Armature/head/a1/a2/d
+        weight: 1
+      - path: Armature/head/a1/a2/d/g
+        weight: 1
+      - path: Armature/head/a1/a2/d/g/h33
+        weight: 1
+      - path: Armature/head/a1/a2/h11
+        weight: 1
+      - path: Armature/head/a1/a2/h11/h12
+        weight: 1
+      - path: Armature/head/a1/a2/h11/h12/h13
+        weight: 1
+      - path: Armature/head/a1/a2/h21
+        weight: 1
+      - path: Armature/head/a1/a2/h21/h22
+        weight: 1
+      - path: Armature/head/a1/a2/h21/h22/h23
+        weight: 1
+      - path: Armature/head/a1/a2/h41
+        weight: 1
+      - path: Armature/head/a1/a2/h41/h42
+        weight: 1
+      - path: Armature/head/a1/a2/h41/h42/h43
+        weight: 1
+      - path: Armature/head/chin
+        weight: 1
+      - path: Armature/head/chin/l11
+        weight: 1
+      - path: Armature/head/chin/l11/l12
+        weight: 1
+      - path: Armature/head/chin/l11/l12/f1
+        weight: 1
+      - path: Armature/head/chin/l21
+        weight: 1
+      - path: Armature/head/chin/l21/l22
+        weight: 1
+      - path: Armature/head/chin/l21/l22/f2
+        weight: 1
+      - path: Armature/head/r1
+        weight: 1
+      - path: Armature/head/r1/r2
+        weight: 1
+      - path: Armature/head/r1/r2/h
+        weight: 1
+      - path: Armature/head/r1/r2/h/v
+        weight: 1
+      - path: Armature/head/r1/r2/h/v/x
+        weight: 1
+      - path: Armature/head/r1/r2/r3
+        weight: 1
+      - path: Armature/head/r1/r2/r3/r3_001
+        weight: 1
+      - path: Armature/head/r1/r2/r3/r3_001/r4
+        weight: 1
+      - path: Armature/head/r1/r2/r5
+        weight: 1
+      - path: Armature/head/r1/r2/r5/r6
+        weight: 1
+      - path: Armature/head/r1/r2/r5/r6/r7
+        weight: 1
+      - path: Armature/head/r1/r2/r44
+        weight: 1
+      - path: Armature/head/r1/r2/r44/3
+        weight: 1
+      - path: Armature/head/r1/r2/r44/3/e
+        weight: 1
+      - path: Boss
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Win
+      takeName: Win
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/head
+        weight: 1
+      - path: Armature/head/a1
+        weight: 1
+      - path: Armature/head/a1/a2
+        weight: 1
+      - path: Armature/head/a1/a2/d
+        weight: 1
+      - path: Armature/head/a1/a2/d/g
+        weight: 1
+      - path: Armature/head/a1/a2/d/g/h33
+        weight: 1
+      - path: Armature/head/a1/a2/h11
+        weight: 1
+      - path: Armature/head/a1/a2/h11/h12
+        weight: 1
+      - path: Armature/head/a1/a2/h11/h12/h13
+        weight: 1
+      - path: Armature/head/a1/a2/h21
+        weight: 1
+      - path: Armature/head/a1/a2/h21/h22
+        weight: 1
+      - path: Armature/head/a1/a2/h21/h22/h23
+        weight: 1
+      - path: Armature/head/a1/a2/h41
+        weight: 1
+      - path: Armature/head/a1/a2/h41/h42
+        weight: 1
+      - path: Armature/head/a1/a2/h41/h42/h43
+        weight: 1
+      - path: Armature/head/chin
+        weight: 1
+      - path: Armature/head/chin/l11
+        weight: 1
+      - path: Armature/head/chin/l11/l12
+        weight: 1
+      - path: Armature/head/chin/l11/l12/f1
+        weight: 1
+      - path: Armature/head/chin/l21
+        weight: 1
+      - path: Armature/head/chin/l21/l22
+        weight: 1
+      - path: Armature/head/chin/l21/l22/f2
+        weight: 1
+      - path: Armature/head/r1
+        weight: 1
+      - path: Armature/head/r1/r2
+        weight: 1
+      - path: Armature/head/r1/r2/h
+        weight: 1
+      - path: Armature/head/r1/r2/h/v
+        weight: 1
+      - path: Armature/head/r1/r2/h/v/x
+        weight: 1
+      - path: Armature/head/r1/r2/r3
+        weight: 1
+      - path: Armature/head/r1/r2/r3/r3_001
+        weight: 1
+      - path: Armature/head/r1/r2/r3/r3_001/r4
+        weight: 1
+      - path: Armature/head/r1/r2/r5
+        weight: 1
+      - path: Armature/head/r1/r2/r5/r6
+        weight: 1
+      - path: Armature/head/r1/r2/r5/r6/r7
+        weight: 1
+      - path: Armature/head/r1/r2/r44
+        weight: 1
+      - path: Armature/head/r1/r2/r44/3
+        weight: 1
+      - path: Armature/head/r1/r2/r44/3/e
+        weight: 1
+      - path: Boss
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
