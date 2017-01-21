@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class QuizScript : MonoBehaviour {
 
+	//AKA COMBAT SCRIPT
+
+	//AKA SHITCODE SCRIPT
+
+	//by Daniel Kütt 21.01.2017
+
 	public List<Question> questions;
 
 	public Question currentQuestion;
@@ -62,10 +68,11 @@ public class QuizScript : MonoBehaviour {
 		
 	}
 
-	public void CombatStart(){	
+	public void CombatStart(){
+		Debug.Log (aiTrigger.GetComponentInChildren<MonsterAttributes> ().health);
 		lastQuestion = -1;
-		playerHealth = 3;
-		enemyHealth = 3;
+		playerHealth = GameObject.FindWithTag ("Player").GetComponent<PlayerAttributes> ().health;; 
+		enemyHealth = aiTrigger.GetComponentInChildren<MonsterAttributes> ().health;
 		theQuestions = generateQuestionArray ();
 		combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
 		newQuestion ();
@@ -76,15 +83,16 @@ public class QuizScript : MonoBehaviour {
 		List<Question> questionsCopy = new List<Question>();
 		for (int i = 0; i < questions.Count; i++){
 			questionsCopy.Add (questions [i]);
-			Debug.Log (questions [i].question);
+			//Debug.Log (questions [i].question);
 		}
-		Debug.Log ("questionscopy filled " + questionsCopy.Count);
+		//Debug.Log ("questionscopy filled " + questionsCopy.Count);
 		List<Question> questionsList = new List<Question> ();
 
-		for (int i = 0; i < 2*enemyHealth; i++) {
+		//TODO replace 2*enemyHealth with actual condition that wouldnt break.	
+		for (int i = 0; i < (playerHealth + enemyHealth); i++) { 
 			int randomIndex = Random.Range (0, questionsCopy.Count);
-			Debug.Log ("rnd "+randomIndex);
-			Debug.Log ("cnt "+questionsCopy.Count);
+			//Debug.Log ("rnd "+randomIndex);
+			//Debug.Log ("cnt "+questionsCopy.Count);
 			Question thatWillBeAdded = questionsCopy [randomIndex];
 			questionsList.Add (thatWillBeAdded);
 			questionsCopy.Remove (thatWillBeAdded);
@@ -114,14 +122,14 @@ public class QuizScript : MonoBehaviour {
 
 	public void newQuestion(){
 		lastQuestion++;
-		Debug.Log("HEALTH: "+enemyHealth);	
+		//Debug.Log("HEALTH: "+enemyHealth);	
 		//Text t = combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
 		//t.text = health.ToString();
 		enemyText.text = enemyHealth.ToString();
 		playerText.text = playerHealth.ToString ();
 
-		Debug.Log ("lastQ " + lastQuestion);
-		Debug.Log ("curQCount " + theQuestions.Count);
+		//Debug.Log ("lastQ " + lastQuestion);
+		//Debug.Log ("curQCount " + theQuestions.Count);
 
 		currentQuestion = theQuestions [lastQuestion];
 		//Debug.Log (currentQuestion);
