@@ -160,6 +160,7 @@ public class QuizScript : MonoBehaviour {
 			colorButton (currentQuestion.correctAnswer, greenColor);
 			enemyHealth--;	
 			if (enemyHealth == 0) {
+				GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Animator> ().Play ("Win");
 				aiTrigger.GetComponentInChildren<Animator> ().SetTrigger ("Lose");
 			}
 		} else {
