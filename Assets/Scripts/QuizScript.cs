@@ -11,13 +11,17 @@ public class QuizScript : MonoBehaviour {
 
 	public GameObject combatCanvas;
 	public Button buttonA, buttonB, buttonC, buttonD;
-	public Text questionText;
+	public Text questionText, enemyText;
 
-	public int health;
+	public AICombatTrigger aiTrigger;
+
+	private int health;
+	private int lastQuestion;
 
 
 	// Use this for initialization
 	void Start () {
+		lastQuestion = -1;
 		questions = new List<Question> ();
 		questions.Add (new Question ("Mis värvi on armastus?",
 			"Sinine","Kes seda teab...","#FF0000","Kartulivärvi", 1));
@@ -40,10 +44,30 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void newQuestion(){
-		Text t = combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
-		t.text = health.ToString();
-		currentQuestion = questions [Random.Range (0, questions.Count)];
-		Debug.Log (currentQuestion);
+		Debug.Log("HEALTH: "+health);
+		//Text t = combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
+		//t.text = health.ToString();
+		enemyText.text = health.ToString();
+
+		int counter = 0; //just in case we have extremely bad/good luck
+		while (true) {
+			counter++;
+			int randomInt = Random.Range (0, questions.Count);
+			if (lastQuestion == -1) {
+				lastQuestion = randomInt;
+				break;
+			} else if (randomInt != lastQuestion) {
+				lastQuestion = randomInt;
+				break;
+			} else if (questions.Capacity < 2) {
+				break;
+			} else if (counter > 20) {
+				break;
+			}	
+		}
+		Debug.Log (counter);
+		currentQuestion = questions [lastQuestion];
+		//Debug.Log (currentQuestion);
 		buttonA.GetComponentInChildren<Text> ().text = currentQuestion.answerA;
 		buttonB.GetComponentInChildren<Text> ().text = currentQuestion.answerB;
 		buttonC.GetComponentInChildren<Text> ().text = currentQuestion.answerC;
@@ -57,6 +81,7 @@ public class QuizScript : MonoBehaviour {
 			health--;
 			if (health == 0) {
 				Debug.Log ("U win the fight, do somit here plox");
+				aiTrigger.FleeCombat ();
 			}
 		} else {
 			Debug.Log ("False answer (" + answer + ")! Correct answer was "+currentQuestion.correctAnswer+".");

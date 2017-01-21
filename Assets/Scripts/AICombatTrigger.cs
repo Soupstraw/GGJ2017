@@ -18,6 +18,7 @@ public class AICombatTrigger : MonoBehaviour {
             c.transform.GetComponent<MovementController>().enabled = false;
             Camera.main.transform.GetComponent<CameraController>().enabled = false;
             t_Player = c.transform;
+			FindObjectOfType<QuizScript> ().aiTrigger = this;
             StartCoroutine(CO_MoveCam());
         }
 	}

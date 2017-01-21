@@ -941,6 +941,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1331220329}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &1468856836 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114940602001893246, guid: bb25b0501e87fdd45ba2ad7d9bfca90f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1331220329}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &1473654730 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114598877560636674, guid: bb25b0501e87fdd45ba2ad7d9bfca90f,
@@ -981,6 +987,7 @@ MonoBehaviour:
   buttonC: {fileID: 1502102750}
   buttonD: {fileID: 540130519}
   questionText: {fileID: 1420965524}
+  enemyText: {fileID: 1468856836}
   health: 0
 --- !u!4 &1500154099
 Transform:
