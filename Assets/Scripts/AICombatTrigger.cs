@@ -54,6 +54,17 @@ public class AICombatTrigger : MonoBehaviour {
 		GetComponentInChildren<Animator> ().SetTrigger ("Win");
 	}
 
+	public void EndCombat(){
+		t_Player.GetComponent<MovementController>().enabled = true;
+		Camera.main.transform.GetComponent<CameraController>().enabled = true;
+		t_Player.GetComponentInChildren<MovementController> ().ResetAnimation ();
+
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+
+		combatCanvas.SetActive (false);
+	}
+
 	IEnumerator CO_MoveCam()
 	{
         float i = 0.0f;
