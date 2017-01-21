@@ -101,8 +101,8 @@ public class QuizScript : MonoBehaviour {
 
 	public void DoItemEffect(ItemScript item){
 		switch (item.itemType) {
-		case ItemType.BOOK:
-			timer += 5f;
+		case ItemType.APPLE:
+			timer = Mathf.Clamp(timer + 5f, 0, 10f);
 			break;
 		case ItemType.PEN:
 			int ans;
@@ -115,6 +115,9 @@ public class QuizScript : MonoBehaviour {
 			cb.disabledColor = Color.black;
 			button.colors = cb;
 			button.interactable = false;
+			break;
+		case ItemType.BOOK:
+			newQuestion ();
 			break;
 		}
 	}

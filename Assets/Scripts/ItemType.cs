@@ -3,6 +3,8 @@
 public enum ItemType
 {
 	PEN,
-	BOOK
+	BOOK,
+	APPLE,
+	HAT
 }
 
