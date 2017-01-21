@@ -25,7 +25,7 @@ public class SlideHelper : MonoBehaviour {
 
 	void Update(){
 		if(clicked && transform.position.y > -max)
-    		transform.position += distance * Time.deltaTime * 10;
+    		transform.position += distance * Time.deltaTime * speed;
 
 		if(lastSlide && transform.position.y <= -max){
 			Debug.Log("next scene");

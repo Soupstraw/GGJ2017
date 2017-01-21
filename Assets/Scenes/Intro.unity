@@ -217,8 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7bf55b42775c3840ba3500e14d4aa13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  max: 20
+  speed: 5
+  max: 50
   lastSlide: 1
 --- !u!1 &1070142321
 GameObject:
@@ -548,6 +548,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7bf55b42775c3840ba3500e14d4aa13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  max: 20
+  speed: 5
+  max: 50
   lastSlide: 0
