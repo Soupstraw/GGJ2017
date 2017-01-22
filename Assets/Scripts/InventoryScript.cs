@@ -32,6 +32,9 @@ public class InventoryScript : MonoBehaviour {
 	public void UseItem(int slot){
 		ItemScript item = items [slot];
 		if (item != null) {
+			Color c = inventoryBoxes [slot].color;
+			c.a = 0.5f;
+			inventoryBoxes [slot].color = c;
 			item.Use ();
 		}
 	}
@@ -63,9 +66,12 @@ public class InventoryScript : MonoBehaviour {
 	}
 
 	public void ResetItems(){
-		foreach (ItemScript item in items) {
-			if (item != null) {
-				item.isUsed = false;
+		for (int i = 0; i < items.Length; i++) {
+			if (items[i] != null) {
+				Color c = inventoryBoxes [i].color;
+				c.a = 1f;
+				inventoryBoxes [i].color = c;
+				items[i].isUsed = false;
 			}
 		}
 	}
