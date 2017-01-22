@@ -148,9 +148,7 @@ public class AICombatTrigger : MonoBehaviour {
 
 		float time = 0f;
 
-		yield return new WaitForSeconds (1f);
-
-		GetComponentInChildren<ParticleSystem> ().Play ();
+		//GetComponentInChildren<ParticleSystem> ().Play ();
 		GetComponentInChildren<Animator> ().Play ("Win");
 		while (time < shakeDuration) {
 			time += Time.deltaTime;

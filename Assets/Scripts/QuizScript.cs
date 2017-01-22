@@ -201,6 +201,7 @@ public class QuizScript : MonoBehaviour {
 			Debug.Log ("False answer (" + answer + ")! Correct answer was "+currentQuestion.correctAnswer+".");
 			playerHealth--;
 			GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Animator> ().Play ("Lose");
+			StartCoroutine(aiTrigger.CO_HitPlayer ());
 		}	
 	}
 
