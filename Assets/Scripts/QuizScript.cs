@@ -74,6 +74,13 @@ public class QuizScript : MonoBehaviour {
 		if (timerRunning) {
 			timer -= Time.deltaTime;
 			timerBar.localScale = new Vector3 (timer / timerMax, 1, 1);
+			if (timer < 0) {
+				if (currentQuestion.correctAnswer == 0) {
+					SelectAnswer (1);
+				} else {
+					SelectAnswer (0);
+				}
+			}
 		}
 	}
 
@@ -150,7 +157,9 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void FleeCombat(){
+		timerRunning = false;
 		soundsManager.PlaySound (0);
+		soundsManager.PlaySound (4);
 		playPreviousMusic ();
 		aiTrigger.FleeCombat ();
 	}
@@ -201,8 +210,10 @@ public class QuizScript : MonoBehaviour {
 			Debug.Log ("False answer (" + answer + ")! Correct answer was "+currentQuestion.correctAnswer+".");
 			playerHealth--;
 			GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Animator> ().Play ("Lose");
+			soundsManager.PlaySound (3);
 		}	
 	}
+		
 
 	public void colorButton(int buttonNumber, Color32 color){
 		Button button = numberToButton (buttonNumber);
@@ -254,6 +265,7 @@ public class QuizScript : MonoBehaviour {
 			aiTrigger.EndCombat ();
 		} else if (lose) {
 			playPreviousMusic ();
+			soundsManager.PlaySound (4);
 			aiTrigger.FleeCombat ();
 		} else { //fight still going on
 			newQuestion ();
