@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\PlayerAttributes.cs" />
      <Compile Include="Assets\Scripts\Question.cs" />
      <Compile Include="Assets\Scripts\QuizScript.cs" />
+     <Compile Include="Assets\Scripts\SheepWalk.cs" />
      <Compile Include="Assets\Scripts\SlideHelper.cs" />
      <Compile Include="Assets\Scripts\SoundsManager.cs" />
      <Compile Include="Assets\SoundManager\Demo\SoundManagerDemo.cs" />

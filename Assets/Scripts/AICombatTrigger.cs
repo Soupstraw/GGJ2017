@@ -134,10 +134,31 @@ public class AICombatTrigger : MonoBehaviour {
 
 		yield return new WaitForSeconds (1f);
 
+		GetComponentInChildren<Animator> ().Play ("Lose");
 		while (time < shakeDuration) {
 			time += Time.deltaTime;
 			Camera.main.transform.position = cameraPosition + new Vector3 (Mathf.Sin(time*10f*Mathf.PI)*0.5f*Mathf.Sin(time/shakeDuration*Mathf.PI), Mathf.Sin(time)*0.1f, 0);
 			GetComponentInChildren<SkinnedMeshRenderer> ().material.color = Color.Lerp (Color.white, Color.red, Mathf.Sin(time*Mathf.PI*2));
+			yield return null;
+		}
+	}
+
+	public IEnumerator CO_HitPlayer(){
+		Vector3 cameraPosition = Camera.main.transform.position;
+
+		float time = 0f;
+
+		yield return new WaitForSeconds (1f);
+
+		GetComponentInChildren<ParticleSystem> ().Play ();
+		GetComponentInChildren<Animator> ().Play ("Win");
+		while (time < shakeDuration) {
+			time += Time.deltaTime;
+			Camera.main.transform.position = cameraPosition + new Vector3 (Mathf.Sin(time*10f*Mathf.PI)*0.5f*Mathf.Sin(time/shakeDuration*Mathf.PI), Mathf.Sin(time)*0.1f, 0);
+			SkinnedMeshRenderer[] rends = GameObject.Find("Player").GetComponentsInChildren<SkinnedMeshRenderer> ();
+			foreach(SkinnedMeshRenderer rend in rends){
+			rend.material.color = Color.Lerp (Color.white, Color.red, Mathf.Sin(time*Mathf.PI*2));
+			}
 			yield return null;
 		}
 	}

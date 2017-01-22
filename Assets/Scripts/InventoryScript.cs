@@ -42,7 +42,7 @@ public class InventoryScript : MonoBehaviour {
 			if (items[i] == null) {
 				items [i] = item;
 				inventoryBoxes [i].sprite = item.itemIcon;
-				if (i == 2) {
+				if (i == 4) {
 					Debug.Log ("Playing cinematic");
 					StartCoroutine(GameObject.Find ("CinematicCamera").GetComponentInChildren<Cinematic> ().Play ());
 				}

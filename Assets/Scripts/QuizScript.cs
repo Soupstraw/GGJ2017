@@ -184,7 +184,7 @@ public class QuizScript : MonoBehaviour {
 				aiTrigger.GetComponentInChildren<Animator> ().SetTrigger ("Lose");
 			} else {
 				GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Animator> ().Play ("Attack");
-				GameObject.FindGameObjectWithTag ("Player").GetComponent<ParticleSystem> ().Play ();
+				GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<ParticleSystem> ().Play ();
 				StartCoroutine (aiTrigger.CO_ShakeAndGlow ());
 			}
 		} else {

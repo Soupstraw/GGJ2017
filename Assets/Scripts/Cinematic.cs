@@ -19,7 +19,9 @@ public class Cinematic : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetKeyDown (KeyCode.P)) {
+			//StartCoroutine (Play());
+		}
 	}
 
 	public IEnumerator Play(){
@@ -33,7 +35,9 @@ public class Cinematic : MonoBehaviour {
 				transform.position = Vector3.Lerp (camStartPos, camEndPos.position, time / panTime);
 				yield return null;
 			}
-			yield return new WaitForSeconds (3f);
+
+			StartCoroutine(GameObject.Find ("sheep").GetComponentInChildren<SheepWalk> ().Walk ());
+			yield return new WaitForSeconds (6f);
 
 			GetComponent<Camera> ().enabled = false;
 			mainCam.enabled = true;
