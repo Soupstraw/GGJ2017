@@ -12,7 +12,6 @@ public class MenuButtonsHelper : MonoBehaviour {
 
 	void OnMouseDown() {
 		if(gameObject.name == "Play"){
-			transform.localScale += new Vector3(0.1f, 0.1f, 0);
 			SceneManager.LoadScene ("Intro");
 		}
 		else if(gameObject.name == "Quit"){
