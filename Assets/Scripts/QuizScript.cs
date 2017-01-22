@@ -143,10 +143,10 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void EndCombat(){
-
 	}
 
 	public void FleeCombat(){
+		playPreviousMusic ();
 		aiTrigger.FleeCombat ();
 	}
 
@@ -232,7 +232,7 @@ public class QuizScript : MonoBehaviour {
 	}
 
 
-	IEnumerator CO_DisableButtons(bool lose, bool win){
+	IEnumerator CO_DisableButtons(bool win, bool lose){
 		setButtonsClickable (false);
 		float i = 0.0f;
 		while(i < 2.4f)
@@ -241,18 +241,19 @@ public class QuizScript : MonoBehaviour {
 			yield return null;
 		}
 		setButtonsClickable (true);
-		if (lose) {
+		if (win) {
 			playPreviousMusic ();
 			aiTrigger.EndCombat ();
-		} else if (win) {
-			playPreviousMusic();
+		} else if (lose) {
+			playPreviousMusic ();
 			aiTrigger.FleeCombat ();
-		} else {
+		} else { //fight still going on
 			newQuestion ();
 		}
 	}
 
 	public void playPreviousMusic(){
-		soundsManager.PlayMusic (soundsManager.lastMusic);
+		int temp = soundsManager.lastMusic;
+		soundsManager.PlayMusic (temp);
 	}
 }
