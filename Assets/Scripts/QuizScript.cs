@@ -211,6 +211,7 @@ public class QuizScript : MonoBehaviour {
 			playerHealth--;
 			GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Animator> ().Play ("Lose");
 			soundsManager.PlaySound (3);
+			StartCoroutine(aiTrigger.CO_HitPlayer ());
 		}	
 	}
 		
