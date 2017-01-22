@@ -17,7 +17,7 @@ public class QuizScript : MonoBehaviour {
 
 	public GameObject combatCanvas;
 	public Button buttonA, buttonB, buttonC, buttonD;
-	public Text questionText, enemyText, playerText;
+	public Text questionText;
 
 	public AICombatTrigger aiTrigger;
 
@@ -145,8 +145,8 @@ public class QuizScript : MonoBehaviour {
 		//Debug.Log("HEALTH: "+enemyHealth);	
 		//Text t = combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
 		//t.text = health.ToString();
-		enemyText.text = enemyHealth.ToString();
-		playerText.text = playerHealth.ToString ();
+		//enemyText.text = enemyHealth.ToString();
+		//playerText.text = playerHealth.ToString ();
 
 		//Debug.Log ("lastQ " + lastQuestion);
 		//Debug.Log ("curQCount " + theQuestions.Count);
