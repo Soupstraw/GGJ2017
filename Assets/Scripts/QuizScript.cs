@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class QuizScript : MonoBehaviour {
 
@@ -189,6 +190,9 @@ public class QuizScript : MonoBehaviour {
 				GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Animator> ().Play ("Win");
 				aiTrigger.GetComponentInChildren<Animator> ().SetTrigger ("Lose");
 				soundsManager.PlaySound (2);
+				if (aiTrigger.finalBoss) {
+					StartCoroutine (EndGame ());
+				}
 			} else {
 				GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Animator> ().Play ("Attack");
 				GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<ParticleSystem> ().Play ();
@@ -264,5 +268,14 @@ public class QuizScript : MonoBehaviour {
 	public void playPreviousMusic(){
 		int temp = soundsManager.lastMusic;
 		soundsManager.PlayMusic (temp);
+	}
+
+	IEnumerator EndGame(){
+		yield return new WaitForSeconds (0.5f);
+		aiTrigger.GetComponentInChildren<ParticleSystem> ().Play ();
+		yield return new WaitForSeconds (0.2f);
+		aiTrigger.transform.gameObject.SetActive(false);
+		yield return new WaitForSeconds (3f);
+		SceneManager.LoadScene ("Outro");
 	}
 }
