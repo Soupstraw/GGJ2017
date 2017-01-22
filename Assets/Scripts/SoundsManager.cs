@@ -34,6 +34,7 @@ namespace DigitalRuby.SoundManagerNamespace{
 		// Use this for initialization
 		void Start () {
 			PlayMusic (1);
+			SoundManager.MusicVolume = 0.6f;
 		}
 		
 		// Update is called once per frame
