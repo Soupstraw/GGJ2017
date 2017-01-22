@@ -68,7 +68,7 @@ public class QuizScript : MonoBehaviour {
 		questions.Add (new Question ("Anatidaephobia is the fear that somewhere in the world a ____ is watching you", "Wolf", "Duck", "Cow", "Pigeon", 1));
 		questions.Add (new Question ("The inventor of Dynamite.", "Alfred Nobel", "Dmitri Mendeleev", "John Dalton", "Marie Curie", 0));
 		questions.Add (new Question ("The Largest country on Earth", "Estonia", "USA", "Africa", "Russia", 3));
-		questions.Add (new Question ("55/100 is", "Blasphemy", "Natural Number", "Rational Number", "Integer", 3));
+		questions.Add (new Question ("55/100 is", "Blasphemy", "Natural Number", "Rational Number", "Integer", 2));
 		questions.Add (new Question ("What is this?", "This is blasphemy!", "This is madness!", "Madness?", "This is SPARTA", 3));
 		questions.Add (new Question ("What is Earth’s natural satellite?", "There are none", "Another Earth", "Sun", "Moon", 3));
 		questions.Add (new Question ("What shape does the Earth have?", "Plate", "Spheroid", "Cube", "Flat", 1));
