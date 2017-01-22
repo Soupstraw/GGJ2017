@@ -36,6 +36,8 @@ public class QuizScript : MonoBehaviour {
 
 	public RectTransform timerBar;
 
+	private DigitalRuby.SoundManagerNamespace.SoundsManager soundsManager;
+
 	// Use this for initialization
 	void Start () {
 		normalColors = buttonA.colors;
@@ -66,7 +68,7 @@ public class QuizScript : MonoBehaviour {
 	void OnDisable(){
 		ItemScript.OnItemUse -= DoItemEffect;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (timerRunning) {
@@ -76,16 +78,26 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void CombatStart(){
-		Debug.Log (aiTrigger.GetComponentInChildren<MonsterAttributes> ().health);
+		MonsterAttributes monster = aiTrigger.GetComponentInChildren<MonsterAttributes> ();
+		soundsManager = GameObject.FindWithTag ("Soundscontainer").GetComponent<DigitalRuby.SoundManagerNamespace.SoundsManager> ();
+
 		lastQuestion = -1;
 		playerHealth = GameObject.FindWithTag ("Player").GetComponent<PlayerAttributes> ().health;; 
-		enemyHealth = aiTrigger.GetComponentInChildren<MonsterAttributes> ().health;
+		enemyHealth = monster.health;
+
+		if (enemyHealth > 3) { //if boss
+			soundsManager.PlayMusic(2);
+		} else { //else normal battle music
+			soundsManager.PlayMusic(0);
+		}
+				
+
 		theQuestions = generateQuestionArray ();
 		combatCanvas.transform.FindChild ("EnemyHP").GetComponent<Text> ();
 		newQuestion ();
 		GameObject.Find ("GameLogic").GetComponent<InventoryScript> ().ResetItems ();
 	}
-		
+
 	public List<Question> generateQuestionArray(){
 		List<Question> questionsCopy = new List<Question>();
 		for (int i = 0; i < questions.Count; i++){
@@ -131,7 +143,7 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void EndCombat(){
-		
+
 	}
 
 	public void FleeCombat(){
@@ -230,11 +242,17 @@ public class QuizScript : MonoBehaviour {
 		}
 		setButtonsClickable (true);
 		if (lose) {
+			playPreviousMusic ();
 			aiTrigger.EndCombat ();
 		} else if (win) {
+			playPreviousMusic();
 			aiTrigger.FleeCombat ();
 		} else {
 			newQuestion ();
 		}
+	}
+
+	public void playPreviousMusic(){
+		soundsManager.PlayMusic (soundsManager.lastMusic);
 	}
 }
