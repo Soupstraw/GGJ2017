@@ -35,6 +35,11 @@ public class QuizScript : MonoBehaviour {
 	public bool timerRunning = false;
 
 	public RectTransform timerBar;
+	public RectTransform enemyHPBar;
+	public RectTransform playerHPBar;
+
+	private int enemyMaxHealth;
+	private int playerMaxHealth;
 
 	private DigitalRuby.SoundManagerNamespace.SoundsManager soundsManager;
 
@@ -91,6 +96,14 @@ public class QuizScript : MonoBehaviour {
 		lastQuestion = -1;
 		playerHealth = GameObject.FindWithTag ("Player").GetComponent<PlayerAttributes> ().health;; 
 		enemyHealth = monster.health;
+
+		playerMaxHealth = playerHealth;
+		enemyMaxHealth = enemyHealth;
+
+		Debug.Log (playerHealth + "/" + playerMaxHealth + ";" + enemyHealth + "/" + enemyMaxHealth);
+
+		enemyHPBar.localScale = new Vector3 (1, 1, 1);
+		playerHPBar.localScale = new Vector3 (1, 1, 1);
 
 		if (enemyHealth > 3) { //if boss
 			soundsManager.PlayMusic(2);
@@ -213,6 +226,9 @@ public class QuizScript : MonoBehaviour {
 			soundsManager.PlaySound (3);
 			StartCoroutine(aiTrigger.CO_HitPlayer ());
 		}	
+
+		enemyHPBar.localScale = new Vector3 ((float)((enemyHealth*1.0)/(enemyMaxHealth*1.0))	, 1, 1);
+		playerHPBar.localScale = new Vector3 ((float)((playerHealth*1.0)/(playerMaxHealth*1.0)), 1, 1);
 	}
 		
 

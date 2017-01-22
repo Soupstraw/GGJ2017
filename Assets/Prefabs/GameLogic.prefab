@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 222749751062238236}
   - component: {fileID: 114351312809599044}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: EnemyFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -474,7 +474,7 @@ GameObject:
   - component: {fileID: 222983024956576170}
   - component: {fileID: 114440758526846958}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PlayerFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1145,6 +1145,8 @@ MonoBehaviour:
   timerMax: 10
   timerRunning: 0
   timerBar: {fileID: 224649116851864700}
+  enemyHPBar: {fileID: 224305109380237114}
+  playerHPBar: {fileID: 224026966865333736}
 --- !u!114 &114633590296248330
 MonoBehaviour:
   m_ObjectHideFlags: 1
