@@ -234,13 +234,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 649515899}
-  m_LocalRotation: {x: 0.15757425, y: -0.25535193, z: 0.042221878, w: 0.9529864}
+  m_LocalRotation: {x: 0.013281072, y: -0.03320822, z: 0.083631694, w: 0.99585474}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 18.778002, y: -30.000002, z: 0}
+  m_LocalEulerAnglesHint: {x: 1.8340001, y: -3.667, z: 9.542001}
 --- !u!1 &1056390484
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 1056390487}
   - component: {fileID: 1056390486}
   m_Layer: 0
-  m_Name: p1
+  m_Name: o1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,7 +300,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 78bfbb5c028b50a4bb14e29b6dd96e55, type: 2}
+  - {fileID: 2100000, guid: a4a81437bf5c3b441a83eac51a028513, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -360,7 +360,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1068957169}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -369,7 +369,7 @@ Transform:
   - {fileID: 2006838101}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -270, y: -90, z: 90}
 --- !u!1 &1304880145
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 1304880148}
   - component: {fileID: 1304880147}
   m_Layer: 0
-  m_Name: p2
+  m_Name: o2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,7 +429,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 28e75c790dd1e9649b4f53bbd626ad30, type: 2}
+  - {fileID: 2100000, guid: 4e5828c59a0319641ba825f963bb9224, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
