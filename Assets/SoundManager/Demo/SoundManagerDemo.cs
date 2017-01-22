@@ -45,7 +45,7 @@ namespace DigitalRuby.SoundManagerNamespace
 
         private void CheckPlayKey()
         {
-            if (SoundCountTextBox.isFocused)
+            if (SoundCountTextBox.isFocused)	
             {
                 return;
             }

@@ -18,7 +18,6 @@ public class SheepWalk : MonoBehaviour {
 	}
 
 	public IEnumerator Walk(){
-		GameObject.FindWithTag ("Soundscontainer").GetComponent<DigitalRuby.SoundManagerNamespace.SoundsManager> ().PlaySound (6);
 		GetComponent<Animator> ().Play ("Walk");
 
 		float time = 0;

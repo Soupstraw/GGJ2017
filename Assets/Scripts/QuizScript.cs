@@ -65,6 +65,22 @@ public class QuizScript : MonoBehaviour {
 			"A-G ja C-T","A-C ja G-T","A-T ja C-G","A-G ja T-C", 2));
 		questions.Add (new Question ("Palju maksab 1 eurone leib",
 			"1 euro + taara","1 euro - taara","1 euro","taara", 2));	
+		questions.Add (new Question ("Anatidaephobia is the fear that somewhere in the world a ____ is watching you", "Wolf", "Duck", "Cow", "Pigeon", 1));
+		questions.Add (new Question ("The inventor of Dynamite.", "Alfred Nobel", "Dmitri Mendeleev", "John Dalton", "Marie Curie", 0));
+		questions.Add (new Question ("The Largest country on Earth", "Estonia", "USA", "Africa", "Russia", 3));
+		questions.Add (new Question ("55/100 is", "Blasphemy", "Natural Number", "Rational Number", "Integer", 3));
+		questions.Add (new Question ("What is this?", "This is blasphemy!", "This is madness!", "Madness?", "This is SPARTA", 3));
+		questions.Add (new Question ("What is Earth’s natural satellite?", "There are none", "Another Earth", "Sun", "Moon", 3));
+		questions.Add (new Question ("What shape does the Earth have?", "Plate", "Spheroid", "Cube", "Flat", 1));
+		questions.Add (new Question ("Modern Human’s (Homo sapiens sapiens) ancestors, according to the theory of evolution, are:", "Chimps", "Owls", "Racoons", "Batmen", 0));
+		questions.Add (new Question ("Water has this many states", "1", "2", "3", "4", 2));
+		questions.Add (new Question ("First item ever listed on eBay", "Pencil", "Shotgun", "Broken laser pointer", "Sandvich", 2));
+		questions.Add (new Question ("Average human body temperature(degrees Celsius) is: ", "30.3", "36.6", "35.1", "40", 2));
+		questions.Add (new Question ("In 1980 Saddam Hussein was named an honorary citizen of this city", "Detroit", "Michigan", "Luxembourg", "Baghdad", 0));
+		questions.Add (new Question ("The 2. largest planet in our solar system is..","Mars","Jupiter","Saturn","The Sun",2));
+		questions.Add (new Question ("What does happen with the alien sheep in this game?","It goes away","It explodes","It gets sick","It flies away",1));
+		questions.Add (new Question ("Where was this game made?","In Latvia","In Finland","In Lithuania","In Estonia",3));
+
 	}
 
 	void OnEnable(){
