@@ -120,6 +120,7 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void DoItemEffect(ItemScript item){
+		soundsManager.PlaySound (0);
 		switch (item.itemType) {
 		case ItemType.APPLE:
 			timer = Mathf.Clamp(timer + 5f, 0, 10f);
@@ -146,6 +147,7 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void FleeCombat(){
+		soundsManager.PlaySound (0);
 		playPreviousMusic ();
 		aiTrigger.FleeCombat ();
 	}
@@ -173,6 +175,7 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void SelectAnswer(int answer){
+		soundsManager.PlaySound (0);
 		timerRunning = false;
 		StartCoroutine (CO_DisableButtons(currentQuestion.correctAnswer == answer && enemyHealth == 1, currentQuestion.correctAnswer != answer && playerHealth == 1));
 		if (currentQuestion.correctAnswer == answer) {
@@ -182,10 +185,12 @@ public class QuizScript : MonoBehaviour {
 			if (enemyHealth == 0) {
 				GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Animator> ().Play ("Win");
 				aiTrigger.GetComponentInChildren<Animator> ().SetTrigger ("Lose");
+				soundsManager.PlaySound (2);
 			} else {
 				GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Animator> ().Play ("Attack");
 				GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<ParticleSystem> ().Play ();
 				StartCoroutine (aiTrigger.CO_ShakeAndGlow ());
+				soundsManager.PlaySound (1);
 			}
 		} else {
 			colorButton (currentQuestion.correctAnswer, greenColor);
