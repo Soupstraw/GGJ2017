@@ -120,6 +120,7 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void DoItemEffect(ItemScript item){
+		soundsManager.PlaySound (0);
 		switch (item.itemType) {
 		case ItemType.APPLE:
 			timer = Mathf.Clamp(timer + 5f, 0, 10f);
@@ -146,6 +147,7 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void FleeCombat(){
+		soundsManager.PlaySound (0);
 		playPreviousMusic ();
 		aiTrigger.FleeCombat ();
 	}
@@ -173,6 +175,7 @@ public class QuizScript : MonoBehaviour {
 	}
 
 	public void SelectAnswer(int answer){
+		soundsManager.PlaySound (0);
 		timerRunning = false;
 		StartCoroutine (CO_DisableButtons(currentQuestion.correctAnswer == answer && enemyHealth == 1, currentQuestion.correctAnswer != answer && playerHealth == 1));
 		if (currentQuestion.correctAnswer == answer) {
