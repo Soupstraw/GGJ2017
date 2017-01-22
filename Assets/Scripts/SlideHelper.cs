@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class SlideHelper : MonoBehaviour {
-	private Vector3 startPoint;
-	private Vector3 endPoint;
 	private Vector3 distance = new Vector3(0, -5, 0);
 	private bool clicked = false;
 
@@ -18,8 +15,6 @@ public class SlideHelper : MonoBehaviour {
 	private string[] story;
 
 	void Start(){
-		startPoint 	= gameObject.transform.position;
-		endPoint	= startPoint + distance;
 
 		story = new string[] {
 			"",

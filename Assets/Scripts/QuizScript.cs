@@ -185,10 +185,12 @@ public class QuizScript : MonoBehaviour {
 			if (enemyHealth == 0) {
 				GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Animator> ().Play ("Win");
 				aiTrigger.GetComponentInChildren<Animator> ().SetTrigger ("Lose");
+				soundsManager.PlaySound (2);
 			} else {
 				GameObject.FindGameObjectWithTag ("Player").GetComponentInChildren<Animator> ().Play ("Attack");
 				GameObject.FindGameObjectWithTag ("Player").GetComponent<ParticleSystem> ().Play ();
 				StartCoroutine (aiTrigger.CO_ShakeAndGlow ());
+				soundsManager.PlaySound (1);
 			}
 		} else {
 			colorButton (currentQuestion.correctAnswer, greenColor);
