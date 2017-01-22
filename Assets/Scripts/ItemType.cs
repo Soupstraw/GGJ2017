@@ -5,6 +5,6 @@ public enum ItemType
 	PEN,
 	BOOK,
 	APPLE,
-	HAT
+	CLOCK
 }
 
