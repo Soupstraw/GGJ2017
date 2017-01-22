@@ -29,7 +29,9 @@ public class SlideHelper : MonoBehaviour {
 			"It was an alien race invading every planet in the universe to steal peoples knowledge.",
 			"It hit our world and started to spread weird waves.",
 			"Lots of monster started to come out of the meteor.",
-			"And after the hit everybody lost their mind and started to act weird."
+			"And after the hit everybody lost their mind and started to act weird.",
+			"I was the only one able to do something to stop them.",
+			"So I decided to fight them with my knowledge."
 		};
 
 		subtitle.text = story[1];
