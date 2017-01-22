@@ -26,7 +26,11 @@ public class OutroHelper : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-        Debug.Log("test");
+		if(!lastSlide)
+			subtitle.text = story[index + 1];
+		else
+			subtitle.text = "";
+
 		clicked = true;
     }
 
