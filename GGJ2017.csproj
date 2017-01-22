@@ -52,6 +52,9 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -67,6 +70,9 @@
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
     </Reference>
@@ -77,11 +83,27 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AICombatTrigger.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Scripts\Cinematic.cs" />
+    <Compile Include="Assets\Scripts\InventoryScript.cs" />
     <Compile Include="Assets\Scripts\ItemScript.cs" />
+    <Compile Include="Assets\Scripts\ItemType.cs" />
+    <Compile Include="Assets\Scripts\MenuButtonsHelper.cs" />
+    <Compile Include="Assets\Scripts\MonsterAttributes.cs" />
     <Compile Include="Assets\Scripts\MovementController.cs" />
-    <Compile Include="Assets\Scripts\PenItemScript.cs" />
+    <Compile Include="Assets\Scripts\MusicChangeZoneController.cs" />
+    <Compile Include="Assets\Scripts\OutroHelper.cs" />
+    <Compile Include="Assets\Scripts\PickupItem.cs" />
+    <Compile Include="Assets\Scripts\PlayerAttributes.cs" />
     <Compile Include="Assets\Scripts\Question.cs" />
     <Compile Include="Assets\Scripts\QuizScript.cs" />
+    <Compile Include="Assets\Scripts\SheepWalk.cs" />
+    <Compile Include="Assets\Scripts\SlideHelper.cs" />
+    <Compile Include="Assets\Scripts\SoundsManager.cs" />
+    <Compile Include="Assets\SoundManager\Demo\SoundManagerDemo.cs" />
+    <Compile Include="Assets\SoundManager\SoundManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\SoundManager\Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
