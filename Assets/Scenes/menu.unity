@@ -1108,6 +1108,7 @@ Animation:
   m_Animation: {fileID: 7400000, guid: 1e75a5cbf87fe0f409d863e8aad16519, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 1e75a5cbf87fe0f409d863e8aad16519, type: 2}
+  - {fileID: 7400000, guid: 3bfbad4ac7aee2740bde99df08bfbd26, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -2047,7 +2048,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 657f602f5ae3ba149bec0fe0719ea41d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 657f602f5ae3ba149bec0fe0719ea41d, type: 3}
@@ -2152,7 +2153,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 657f602f5ae3ba149bec0fe0719ea41d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9500000, guid: 657f602f5ae3ba149bec0fe0719ea41d, type: 3}
@@ -2258,9 +2259,10 @@ Animation:
   m_GameObject: {fileID: 1381728431}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 1e75a5cbf87fe0f409d863e8aad16519, type: 2}
+  m_Animation: {fileID: 7400000, guid: 3bfbad4ac7aee2740bde99df08bfbd26, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 1e75a5cbf87fe0f409d863e8aad16519, type: 2}
+  - {fileID: 7400000, guid: 3bfbad4ac7aee2740bde99df08bfbd26, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
