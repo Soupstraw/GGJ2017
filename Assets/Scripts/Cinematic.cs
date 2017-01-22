@@ -6,6 +6,7 @@ public class Cinematic : MonoBehaviour {
 
 	public Transform camEndPos;
 	private Vector3 camStartPos;
+	private bool soundPlayed = false;
 
 	public float panTime = 3f;
 
@@ -26,6 +27,12 @@ public class Cinematic : MonoBehaviour {
 
 	public IEnumerator Play(){
 		if (mainCam.enabled) {
+			if (!soundPlayed) {
+				DigitalRuby.SoundManagerNamespace.SoundsManager soundManager = GameObject.FindWithTag ("Soundscontainer").GetComponent<DigitalRuby.SoundManagerNamespace.SoundsManager> ();
+				soundManager.PlaySound (6);
+				soundPlayed = true;
+			}
+
 			mainCam.enabled = false;
 			GetComponent<Camera> ().enabled = true;
 
