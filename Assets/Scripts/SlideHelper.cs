@@ -25,8 +25,8 @@ public class SlideHelper : MonoBehaviour {
 			"",
 			"Our planet was living in peace and harmony for a long time.",
 			"Mind Stones and the Mind Crystal kept us wise and nobody did stupid stuff.",
-			"But one day an meteor appeared in the sky and was getting closer every secong.",
-			"We learned that they were an alien race invading every planet in the universe to steal peoples knowledge.",
+			"But one day an meteor appeared in the sky and was getting closer every second.",
+			"It was an alien race invading every planet in the universe to steal peoples knowledge.",
 			"It hit our world and started to spread weird waves.",
 			"Lots of monster started to come out of the meteor.",
 			"And after the hit everybody lost their mind and started to act weird."
