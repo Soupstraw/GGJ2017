@@ -14,6 +14,8 @@ public class AICombatTrigger : MonoBehaviour {
 
 	public float shakeDuration = 1f;
 
+	public bool finalBoss = false;
+
 	void Start(){
 		t_Player = GameObject.FindWithTag ("Player").transform;
 	}
