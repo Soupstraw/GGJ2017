@@ -928,6 +928,7 @@ MonoBehaviour:
   f_RotateSpeed: 10
   characterAnimator: {fileID: 95192316608197356}
   jumpDelay: 0.3
+  sprintMultiplier: 1.5
 --- !u!114 &114816507266286370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1210,7 +1211,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 835342205
+  randomSeed: -737570729
   InitialModule:
     serializedVersion: 3
     enabled: 1

@@ -17,6 +17,8 @@ public class MovementController : MonoBehaviour {
 	public float jumpDelay;
 	private bool doJump = false;
 
+	public float sprintMultiplier;
+
     void Awake()
     {
         cc_This = GetComponent<CharacterController>();
@@ -46,6 +48,13 @@ public class MovementController : MonoBehaviour {
 				characterAnimator.SetTrigger ("Jump");
 				StartCoroutine (Jump());
 			}*/
+
+			if (Input.GetButton ("Sprint")) {
+				v3_MoveDir *= sprintMultiplier;
+				characterAnimator.SetFloat ("SprintMultiplier", sprintMultiplier);
+			} else {
+				characterAnimator.SetFloat ("SprintMultiplier", 1);
+			}
 
 			if (doJump) {
 				v3_MoveDir.y = f_JumpSpeed;
