@@ -122,7 +122,7 @@ public class QuizScript : MonoBehaviour {
 	public void DoItemEffect(ItemScript item){
 		soundsManager.PlaySound (0);
 		switch (item.itemType) {
-		case ItemType.APPLE:
+		case ItemType.CLOCK:
 			timer = Mathf.Clamp(timer + 5f, 0, 10f);
 			break;
 		case ItemType.PEN:
@@ -139,6 +139,9 @@ public class QuizScript : MonoBehaviour {
 			break;
 		case ItemType.BOOK:
 			newQuestion ();
+			break;
+		case ItemType.APPLE:
+			
 			break;
 		}
 	}
