@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\ItemScript.cs" />
     <Compile Include="Assets\Scripts\ItemType.cs" />
     <Compile Include="Assets\Scripts\MenuButtonsHelper.cs" />
+    <Compile Include="Assets\Scripts\MenuController.cs" />
     <Compile Include="Assets\Scripts\MonsterAttributes.cs" />
     <Compile Include="Assets\Scripts\MovementController.cs" />
     <Compile Include="Assets\Scripts\MusicChangeZoneController.cs" />
