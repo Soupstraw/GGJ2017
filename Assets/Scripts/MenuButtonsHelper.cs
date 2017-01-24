@@ -7,8 +7,8 @@ public class MenuButtonsHelper : MonoBehaviour {
 	private Renderer rend;
 
 	void Start() {
-        Shader rend = GetComponent<Shader>();
-    }
+		Shader rend = GetComponent<Shader>();
+	}
 
 	void OnMouseDown() {
 		if(gameObject.name == "Play"){
@@ -17,13 +17,13 @@ public class MenuButtonsHelper : MonoBehaviour {
 		else if(gameObject.name == "Quit"){
 			Application.Quit();
 		}
-    }
+    	}
 
 	void OnMouseOver(){
-        gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
+        	gameObject.GetComponent<Renderer> ().material.color = Color.yellow;
 	}
 
 	void OnMouseExit(){
-        gameObject.GetComponent<Renderer> ().material.color = Color.white;
+        	gameObject.GetComponent<Renderer> ().material.color = Color.white;
 	}
 }
